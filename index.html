@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="celeste">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>MeraKi · Indumentaria Deco & Home | Puerto Iguazú</title>
     <meta name="description" content="Moda, hogar y bienestar espiritual en Puerto Iguazú. Ropa femenina, decoración, aromas textiles y sahumado. Ushuaia 196 esq. Jangadero.">
 
-    <meta name="theme-color" content="#C3D6FF">
+    <meta name="theme-color" content="#C3D6FF" id="metaThemeColor">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
@@ -59,7 +59,8 @@
             --pattern-opacity: 0.95;
         }
 
-        /* MODO 2: BORDEAUX CHIC (INVERSIÓN DE LA CAPTURA CENTRAL DE ILLUSTRATOR) */
+        /* MODO 2: BORDEAUX CHIC (APLICADO EN HTML Y BODY) */
+        html[data-theme="bordeaux"],
         body[data-theme="bordeaux"] {
             --bg-body: #600000;
             --bg-surface: #260000;
@@ -98,6 +99,7 @@
             background-color: var(--bg-body);
             -webkit-text-size-adjust: 100%;
             text-size-adjust: 100%;
+            transition: background-color 0.35s ease;
         }
 
         body {
@@ -132,7 +134,7 @@
             background-repeat: repeat;
             will-change: transform;
             animation: driftRightForever 34s linear infinite;
-            transition: opacity 0.35s ease;
+            transition: opacity 0.35s ease, background-image 0.35s ease;
         }
 
         @keyframes driftRightForever {
@@ -181,8 +183,10 @@
             position: relative;
             z-index: 20;
             box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            transition: background 0.35s ease, border-color 0.35s ease;
         }
 
+        html[data-theme="bordeaux"] .marquee-top-strip,
         body[data-theme="bordeaux"] .marquee-top-strip {
             background: #200000;
             border-bottom: 1px solid rgba(194, 213, 254, 0.25);
@@ -211,7 +215,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* MICRO-SWITCH SUTIL Y ELEGANTE (SIN TEXTOS DE MÁS) */
+        /* MICRO-SWITCH SUTIL Y ELEGANTE */
         .top-micro-bar {
             display: flex;
             align-items: center;
@@ -255,6 +259,7 @@
             border: 1px solid rgba(0,0,0,0.1);
         }
 
+        html[data-theme="bordeaux"] .dot-sky,
         body[data-theme="bordeaux"] .dot-sky {
             box-shadow: 0 0 6px #8CADF6;
         }
@@ -274,7 +279,7 @@
 
         .brand-logo-frame {
             width: 100%;
-            max-width: 315px; /* TAMAÑO Y JERARQUÍA COMPLETA RECUPERADA */
+            max-width: 315px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -289,7 +294,7 @@
         .meraki-svg-logo {
             width: 100%;
             height: auto;
-            max-height: 145px; /* ESCALA IMPONENTE */
+            max-height: 145px;
             display: block;
             filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
             transition: filter 0.3s ease;
@@ -324,6 +329,7 @@
             padding: 12px 18px;
             box-shadow: var(--shadow-card);
             width: 100%;
+            transition: background 0.35s ease, border-color 0.35s ease;
         }
 
         .brand-manifesto-box p {
@@ -348,6 +354,7 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            transition: background 0.35s ease, border-color 0.35s ease;
         }
 
         .status-dot {
@@ -385,6 +392,7 @@
             width: 100%;
         }
 
+        html[data-theme="bordeaux"] .btn-whatsapp-hero,
         body[data-theme="bordeaux"] .btn-whatsapp-hero {
             background: linear-gradient(135deg, #2D0000 0%, #1A0000 100%);
             border: 2px solid rgba(194, 213, 254, 0.6);
@@ -469,7 +477,7 @@
         }
 
         /* ==========================================================================
-           6. VIDEO REEL "SMART VIEWPORT" (ZERO-LAG INTERSECTIONOBSERVER)
+           6. VIDEO REEL "SMART VIEWPORT" (AUTOPLAY REALIZADO & ZERO-LAG)
            ========================================================================== */
         .video-reel-stage {
             width: 100%;
@@ -572,6 +580,7 @@
             border-top: 4px solid #600000;
         }
 
+        html[data-theme="bordeaux"] .cell-hogar,
         body[data-theme="bordeaux"] .cell-hogar {
             border-top: 4px solid #C2D5FE;
         }
@@ -593,6 +602,7 @@
             border-left: 5px solid #600000;
         }
 
+        html[data-theme="bordeaux"] .cell-full-span,
         body[data-theme="bordeaux"] .cell-full-span {
             border-left: 5px solid #C2D5FE;
         }
@@ -613,6 +623,7 @@
             color: #600000;
         }
 
+        html[data-theme="bordeaux"] .cell-tag,
         body[data-theme="bordeaux"] .cell-tag {
             color: #C2D5FE;
         }
@@ -775,6 +786,7 @@
             flex-direction: column;
             gap: 12px;
             width: 100%;
+            transition: background 0.35s ease, border-color 0.35s ease;
         }
 
         .showcase-header {
@@ -859,8 +871,10 @@
             text-transform: uppercase;
             padding: 3px 8px;
             border-radius: 999px;
+            transition: background 0.35s ease, color 0.35s ease;
         }
 
+        html[data-theme="bordeaux"] .product-tag-badge,
         body[data-theme="bordeaux"] .product-tag-badge {
             background: #C2D5FE;
             color: #420000;
@@ -904,6 +918,7 @@
             flex-direction: column;
             gap: 12px;
             width: 100%;
+            transition: background 0.35s ease, border-color 0.35s ease;
         }
 
         .store-location-header {
@@ -980,7 +995,7 @@
         }
 
         /* ==========================================================================
-           11. REDES OFICIALES & BOTÓN FLOTANTE WHATSAPP CONCIERGE
+           11. REDES OFICIALES & BOTÓN FLOTANTE WHATSAPP CONCIERGE (SMART SCROLL)
            ========================================================================== */
         .social-network-bar {
             display: flex;
@@ -1019,7 +1034,7 @@
             fill: currentColor;
         }
 
-        /* BOTÓN FLOTANTE CON RESGUARDO SAFE-AREA PARA INSTAGRAM WEBVIEW */
+        /* BOTÓN FLOTANTE: OCULTO POR DEFECTO PARA NO PISAR EL HERO, APARECE SUAVE CON SCROLL */
         .floating-concierge-wrap {
             position: fixed;
             bottom: calc(18px + env(safe-area-inset-bottom, 0px));
@@ -1029,6 +1044,16 @@
             gap: 8px;
             z-index: 999;
             text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(22px);
+            transition: opacity 0.3s ease, transform 0.3s var(--spring);
+        }
+
+        .floating-concierge-wrap.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
         }
 
         .floating-pill-label {
@@ -1042,8 +1067,10 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
             letter-spacing: 0.08em;
             text-transform: uppercase;
+            transition: background 0.35s ease, color 0.35s ease;
         }
 
+        html[data-theme="bordeaux"] .floating-pill-label,
         body[data-theme="bordeaux"] .floating-pill-label {
             background: #C2D5FE;
             color: #420000;
@@ -1195,8 +1222,8 @@
             </div>
         </header>
 
-        <!-- 2. HERO CALL TO ACTION: WHATSAPP DIRECTO AL LOCAL -->
-        <a href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Vi%20sus%20novedades%20en%20el%20sitio%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-hero" onclick="playHaptic()">
+        <!-- 2. HERO CALL TO ACTION: WHATSAPP DIRECTO AL LOCAL (ELEMENTO DISPARADOR DEL FLOTANTE) -->
+        <a id="heroWhatsAppBtn" href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Vi%20sus%20novedades%20en%20el%20sitio%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-hero" onclick="playHaptic()">
             <div class="hero-wa-info">
                 <span class="hero-wa-badge">Atención Personalizada · Puerto Iguazú</span>
                 <h2 class="hero-wa-title">Consultar por WhatsApp</h2>
@@ -1207,9 +1234,9 @@
             </div>
         </a>
 
-        <!-- 3. VIDEO REEL "SMART VIEWPORT" (ZERO-LAG INTERSECTIONOBSERVER) -->
+        <!-- 3. VIDEO REEL "SMART VIEWPORT" (CORREGIDO: AUTOPLAY, MUTED, PRELOAD AUTO) -->
         <article class="video-reel-stage">
-            <video class="smart-reel-video" playsinline muted loop preload="none">
+            <video class="smart-reel-video" autoplay muted loop playsinline preload="auto" webkit-playsinline>
                 <source src="moda.mp4" type="video/mp4">
             </video>
             <div class="video-reel-overlay">
@@ -1414,8 +1441,8 @@
 
     </main>
 
-    <!-- 10. BOTÓN FLOTANTE WHATSAPP CONCIERGE -->
-    <a href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quisiera%20hacer%20una%20consulta." class="floating-concierge-wrap" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Asistente" onclick="playHaptic()">
+    <!-- 10. BOTÓN FLOTANTE WHATSAPP CONCIERGE (SMART SCROLL: APARECE PASANDO EL HERO) -->
+    <a id="floatingConcierge" href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quisiera%20hacer%20una%20consulta." class="floating-concierge-wrap" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Asistente" onclick="playHaptic()">
         <span class="floating-pill-label">¡Consultanos!</span>
         <div class="floating-circle-btn">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -1424,7 +1451,7 @@
 
     <!-- ==========================================================================
          MOTOR JS DE ULTRA-VELOCIDAD: WASM + WEB WORKER + IDLE CALLBACK + INTERSECTION OBSERVER
-         ========================================================================== */
+         ========================================================================== -->
     <script>
         // 1. MÓDULO WEBASSEMBLY (WASM) INLINE NATIVO EN MEMORIA
         const wasmByteCode = new Uint8Array([
@@ -1479,22 +1506,60 @@
             });
         }
 
-        // 4. SMART VIEWPORT VIDEO: CONTROL PRECISO DE HARDWARE (CERO TIRONES EN CELULAR)
+        // 4. SMART VIEWPORT VIDEO: REPRODUCCIÓN GARANTIZADA SIN TIRONES
         const reelVideo = document.querySelector('.smart-reel-video');
-        if (reelVideo && 'IntersectionObserver' in window) {
-            const videoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        reelVideo.play().catch(() => {});
-                    } else {
-                        reelVideo.pause();
-                    }
-                });
-            }, { threshold: 0.35 });
-            videoObserver.observe(reelVideo);
+        if (reelVideo) {
+            reelVideo.muted = true;
+            reelVideo.play().catch(() => {});
+            
+            if ('IntersectionObserver' in window) {
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            reelVideo.play().catch(() => {});
+                        } else {
+                            reelVideo.pause();
+                        }
+                    });
+                }, { threshold: 0.25 });
+                videoObserver.observe(reelVideo);
+            }
         }
 
-        // 5. DETECTOR EN TIEMPO REAL DEL LOCAL (USHUAIA 196)
+        // 5. SMART SCROLL FLOTANTE: APARECE ÚNICAMENTE CUANDO SE PASA EL BOTÓN HERO DE WHATSAPP
+        const heroWhatsAppBtn = document.getElementById('heroWhatsAppBtn');
+        const floatingConcierge = document.getElementById('floatingConcierge');
+
+        if (heroWhatsAppBtn && floatingConcierge && 'IntersectionObserver' in window) {
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Si el Hero es visible, el flotante se oculta. Si sale de la pantalla, se muestra.
+                    if (entry.isIntersecting) {
+                        floatingConcierge.classList.remove('is-visible');
+                    } else {
+                        // Verificamos que esté debajo (scroll down)
+                        const heroRect = heroWhatsAppBtn.getBoundingClientRect();
+                        if (heroRect.top < 0) {
+                            floatingConcierge.classList.add('is-visible');
+                        } else {
+                            floatingConcierge.classList.remove('is-visible');
+                        }
+                    }
+                });
+            }, { threshold: 0 });
+            heroObserver.observe(heroWhatsAppBtn);
+        } else if (floatingConcierge) {
+            // Fallback scroll listener
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 380) {
+                    floatingConcierge.classList.add('is-visible');
+                } else {
+                    floatingConcierge.classList.remove('is-visible');
+                }
+            }, { passive: true });
+        }
+
+        // 6. DETECTOR EN TIEMPO REAL DEL LOCAL (USHUAIA 196)
         // Horario real: Lun a Vier: 9:00 a 12:30 | 16:30 a 21:00
         function updateStoreStatus() {
             const now = new Date();
@@ -1529,7 +1594,7 @@
             }
         }
 
-        // 6. SELECTOR INTERACTIVO "7 DÍAS / 7 INTENCIONES"
+        // 7. SELECTOR INTERACTIVO "7 DÍAS / 7 INTENCIONES"
         const intencionesData = {
             abundancia: {
                 title: "Momento de Abundancia",
@@ -1566,20 +1631,29 @@
             }
         }
 
-        // 7. CONTROL DEL MODO DUAL (CELESTE/LAVANDA ORIGINAL VS BORDEAUX CHIC)
-        function toggleDualTheme() {
-            playHaptic();
-            const currentTheme = document.body.getAttribute('data-theme') || 'celeste';
-            const nextTheme = currentTheme === 'celeste' ? 'bordeaux' : 'celeste';
+        // 8. CONTROL DEL MODO DUAL (CORREGIDO: AFECTA HTML + BODY + META THEME-COLOR)
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.body.setAttribute('data-theme', theme);
             
-            document.body.setAttribute('data-theme', nextTheme);
+            const metaTheme = document.getElementById('metaThemeColor');
+            if (metaTheme) {
+                metaTheme.setAttribute('content', theme === 'bordeaux' ? '#600000' : '#C3D6FF');
+            }
 
             try {
-                localStorage.setItem('meraki_theme_mode', nextTheme);
+                localStorage.setItem('meraki_theme_mode', theme);
             } catch(e) {}
         }
 
-        // 8. RESPUESTA HÁPTICA MÓVIL
+        function toggleDualTheme() {
+            playHaptic();
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'celeste';
+            const nextTheme = currentTheme === 'celeste' ? 'bordeaux' : 'celeste';
+            applyTheme(nextTheme);
+        }
+
+        // 9. RESPUESTA HÁPTICA MÓVIL
         function playHaptic() {
             if ('vibrate' in navigator) {
                 try { navigator.vibrate(8); } catch(e) {}
@@ -1591,7 +1665,9 @@
             try {
                 const savedTheme = localStorage.getItem('meraki_theme_mode');
                 if (savedTheme === 'bordeaux') {
-                    document.body.setAttribute('data-theme', 'bordeaux');
+                    applyTheme('bordeaux');
+                } else {
+                    applyTheme('celeste');
                 }
             } catch(e) {}
 
