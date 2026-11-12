@@ -6,7 +6,7 @@
     <title>MeraKi · Indumentaria Deco & Home | Puerto Iguazú</title>
     <meta name="description" content="Moda, hogar y bienestar espiritual en Puerto Iguazú. Ropa femenina, decoración, aromas textiles y sahumado. Ushuaia 196 esq. Jangadero.">
 
-    <meta name="theme-color" content="#FAF7F2">
+    <meta name="theme-color" content="#C3D6FF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
@@ -17,27 +17,29 @@
 
     <style>
         /* ==========================================================================
-           1. SISTEMA CROMÁTICO DEFINITIVO (IDENTIDAD OFICIAL MERAKI)
+           1. SISTEMA CROMÁTICO DUAL (MODO CELESTE/LAVANDA & MODO BORDEAUX CHIC)
            ========================================================================== */
         :root {
-            --bg-body: #FAF7F2;
+            /* MODO 1: CELESTE/LAVANDA ORIGINAL #C3D6FF & VINO (DEFECTO / ILUSTRATOR) */
+            --bg-body: #C3D6FF;
             --bg-surface: #FFFFFF;
-            --bg-surface-elevated: #F3ECE2;
+            --bg-surface-elevated: #F4F7FF;
             
             --meraki-vino: #600000;
             --meraki-vino-dark: #3F0000;
-            --meraki-vino-glow: rgba(96, 0, 0, 0.20);
+            --meraki-vino-glow: rgba(96, 0, 0, 0.22);
+            --meraki-logo-color: #600000;
             
             --meraki-sky: #C2D5FE;
             --meraki-cornflower: #8CADF6;
-            --meraki-sky-soft: rgba(194, 213, 254, 0.35);
+            --meraki-sky-soft: rgba(195, 214, 255, 0.45);
 
             --color-text-main: #241A17;
-            --color-text-muted: #6B5E57;
-            --color-border: #E8DED2;
+            --color-text-muted: #61554F;
+            --color-border: #D0DEFC;
             --color-border-hover: #600000;
             
-            /* DESTACADAS DE INSTAGRAM */
+            /* DESTACADAS */
             --destacada-ellas: #DCCDB6;
             --destacada-hogar: #F7F3E8;
             --destacada-aroma: #98C7CD;
@@ -48,9 +50,36 @@
             --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             --font-mono: 'Space Grotesk', monospace;
 
-            --shadow-card: 0 10px 28px -6px rgba(96, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
-            --shadow-hover: 0 16px 36px -8px rgba(96, 0, 0, 0.20), 0 6px 14px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 12px 30px -6px rgba(96, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 18px 40px -8px rgba(96, 0, 0, 0.22), 0 6px 16px rgba(0, 0, 0, 0.06);
             --spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+            /* PATRÓN MODO LUZ: FONDO #C3D6FF 100% REAL CON LUNARES BLANCOS TOTALMENTE NÍTIDOS */
+            --pattern-dots-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 419.87 524.84' width='140' height='175'%3E%3Cpath fill='%23C3D6FF' d='M419.82,470.37c0,17.49-.03,34.98.05,52.46,0,1.63-.3,2-1.98,2-138.61-.05-277.22-.05-415.83,0-1.9,0-2.04-.64-2.04-2.21C.04,349.14.04,175.64,0,2.15,0,.44.36.01,2.12.02,140.63.06,279.15.07,417.67,0c2.04,0,2.19.6,2.19,2.35-.05,153.41-.04,306.83-.04,460.24-2.03.12-2.22-1.65-2.78-2.88-2.54-5.55-6.76-8.81-12.77-9.93-8.56-1.59-17.99,4.95-19.16,13.6-.88,6.48.88,12.2,6.23,16.26,5.09,3.87,10.82,4.56,16.78,2.17,4.22-1.69,7.21-4.69,8.99-8.92.5-1.18.73-2.84,2.7-2.53Z'/%3E%3Ccircle cx='302' cy='212' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='220' cy='466' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='212' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='302' cy='32' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='394' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='392' cy='303' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='392' cy='122' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='302' cy='394' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='38' cy='464' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='28' cy='119' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='28' cy='300' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='210' cy='300' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='210' cy='119' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='29' r='18' fill='%23FFFFFF'/%3E%3C/svg%3E");
+            --pattern-opacity: 0.95;
+        }
+
+        /* MODO 2: BORDEAUX CHIC (INVERSIÓN DE LA CAPTURA CENTRAL DE ILLUSTRATOR) */
+        body[data-theme="bordeaux"] {
+            --bg-body: #600000;
+            --bg-surface: #260000;
+            --bg-surface-elevated: #360101;
+            
+            --meraki-vino: #FFFFFF;
+            --meraki-vino-dark: #1A0000;
+            --meraki-vino-glow: rgba(194, 213, 254, 0.25);
+            --meraki-logo-color: #FFFFFF; /* LOGO BLANCO PURO */
+            
+            --color-text-main: #FFFFFF;
+            --color-text-muted: #E2D3CD;
+            --color-border: rgba(194, 213, 254, 0.24);
+            --color-border-hover: #C2D5FE;
+
+            --destacada-hogar: #350202;
+
+            /* PATRÓN MODO BORDEAUX: FONDO VINO (#600000) CON PUNTOS CELESTES (#8CADF6) */
+            --pattern-dots-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 419.87 524.84' width='140' height='175'%3E%3Cpath fill='%23600000' d='M419.82,470.37c0,17.49-.03,34.98.05,52.46,0,1.63-.3,2-1.98,2-138.61-.05-277.22-.05-415.83,0-1.9,0-2.04-.64-2.04-2.21C.04,349.14.04,175.64,0,2.15,0,.44.36.01,2.12.02,140.63.06,279.15.07,417.67,0c2.04,0,2.19.6,2.19,2.35-.05,153.41-.04,306.83-.04,460.24-2.03.12-2.22-1.65-2.78-2.88-2.54-5.55-6.76-8.81-12.77-9.93-8.56-1.59-17.99,4.95-19.16,13.6-.88,6.48.88,12.2,6.23,16.26,5.09,3.87,10.82,4.56,16.78,2.17,4.22-1.69,7.21-4.69,8.99-8.92.5-1.18.73-2.84,2.7-2.53Z'/%3E%3Ccircle cx='302' cy='212' r='18' fill='%238CADF6'/%3E%3Ccircle cx='220' cy='466' r='18' fill='%238CADF6'/%3E%3Ccircle cx='120' cy='212' r='18' fill='%238CADF6'/%3E%3Ccircle cx='302' cy='32' r='18' fill='%238CADF6'/%3E%3Ccircle cx='120' cy='394' r='18' fill='%238CADF6'/%3E%3Ccircle cx='392' cy='303' r='18' fill='%238CADF6'/%3E%3Ccircle cx='392' cy='122' r='18' fill='%238CADF6'/%3E%3Ccircle cx='302' cy='394' r='18' fill='%238CADF6'/%3E%3Ccircle cx='38' cy='464' r='18' fill='%238CADF6'/%3E%3Ccircle cx='28' cy='119' r='18' fill='%238CADF6'/%3E%3Ccircle cx='28' cy='300' r='18' fill='%238CADF6'/%3E%3Ccircle cx='210' cy='300' r='18' fill='%238CADF6'/%3E%3Ccircle cx='210' cy='119' r='18' fill='%238CADF6'/%3E%3Ccircle cx='120' cy='29' r='18' fill='%238CADF6'/%3E%3C/svg%3E");
+            --pattern-opacity: 0.98;
         }
 
         /* ==========================================================================
@@ -76,7 +105,7 @@
             color: var(--color-text-main);
             font-family: var(--font-sans);
             min-height: 100vh;
-            min-height: 100dvh; /* Previene el bug de altura al scrollear en el navegador de Instagram */
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -85,9 +114,10 @@
             width: 100%;
             position: relative;
             letter-spacing: -0.01em;
+            transition: background-color 0.35s ease, color 0.35s ease;
         }
 
-        /* CAPA 1: PATRÓN DE LUNARES VECTORIALES CON MAYOR PRESENCIA DEL BLANCO */
+        /* CAPA DE DERIVA PERPETUA DE LUNARES EN GPU */
         .ambient-dots-layer {
             position: fixed;
             top: 0;
@@ -96,12 +126,13 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.22; /* Opacidad optimizada para realce sutil y elegante de los puntos blancos */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 419.87 524.84' width='140' height='175'%3E%3Cpath fill='%23C3D6FF' fill-opacity='0.75' d='M419.82,470.37c0,17.49-.03,34.98.05,52.46,0,1.63-.3,2-1.98,2-138.61-.05-277.22-.05-415.83,0-1.9,0-2.04-.64-2.04-2.21C.04,349.14.04,175.64,0,2.15,0,.44.36.01,2.12.02,140.63.06,279.15.07,417.67,0c2.04,0,2.19.6,2.19,2.35-.05,153.41-.04,306.83-.04,460.24-2.03.12-2.22-1.65-2.78-2.88-2.54-5.55-6.76-8.81-12.77-9.93-8.56-1.59-17.99,4.95-19.16,13.6-.88,6.48.88,12.2,6.23,16.26,5.09,3.87,10.82,4.56,16.78,2.17,4.22-1.69,7.21-4.69,8.99-8.92.5-1.18.73-2.84,2.7-2.53Z'/%3E%3Ccircle cx='302' cy='212' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='220' cy='466' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='212' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='302' cy='32' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='394' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='392' cy='303' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='392' cy='122' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='302' cy='394' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='38' cy='464' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='28' cy='119' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='28' cy='300' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='210' cy='300' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='210' cy='119' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='29' r='18' fill='%23FFFFFF'/%3E%3C/svg%3E");
+            opacity: var(--pattern-opacity);
+            background-image: var(--pattern-dots-url);
             background-size: 140px 175px;
             background-repeat: repeat;
             will-change: transform;
             animation: driftRightForever 34s linear infinite;
+            transition: opacity 0.35s ease;
         }
 
         @keyframes driftRightForever {
@@ -109,7 +140,7 @@
             100% { transform: translate3d(140px, 0, 0); }
         }
 
-        /* CAPA 2: SPOTLIGHT AMBIENTAL */
+        /* SPOTLIGHT AMBIENTAL */
         .ambient-spotlight {
             position: fixed;
             top: -120px;
@@ -117,7 +148,7 @@
             transform: translateX(-50%);
             width: clamp(340px, 95vw, 760px);
             height: 520px;
-            background: radial-gradient(ellipse at center, rgba(194, 213, 254, 0.40) 0%, rgba(250, 247, 242, 0) 72%);
+            background: radial-gradient(ellipse at center, var(--meraki-sky-soft) 0%, rgba(255, 255, 255, 0) 72%);
             pointer-events: none;
             z-index: 2;
             filter: blur(50px);
@@ -141,7 +172,7 @@
             width: calc(100% + 28px);
             margin-left: -14px;
             margin-right: -14px;
-            background: var(--meraki-vino);
+            background: #600000;
             color: #FFFFFF;
             overflow: hidden;
             padding: 8px 0;
@@ -149,7 +180,12 @@
             white-space: nowrap;
             position: relative;
             z-index: 20;
-            box-shadow: 0 4px 14px var(--meraki-vino-glow);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+        }
+
+        body[data-theme="bordeaux"] .marquee-top-strip {
+            background: #200000;
+            border-bottom: 1px solid rgba(194, 213, 254, 0.25);
         }
 
         .marquee-track {
@@ -175,22 +211,70 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* MICRO-SWITCH SUTIL Y ELEGANTE (SIN TEXTOS DE MÁS) */
+        .top-micro-bar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 10px 4px 0;
+        }
+
+        .theme-micro-pill {
+            background: var(--bg-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 999px;
+            padding: 4px 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.25s var(--spring);
+        }
+
+        .theme-micro-pill:hover {
+            transform: scale(1.08);
+            border-color: var(--color-border-hover);
+        }
+
+        .micro-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .dot-vino {
+            background: #600000;
+            box-shadow: 0 0 4px rgba(96, 0, 0, 0.4);
+        }
+
+        .dot-sky {
+            background: #C3D6FF;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        body[data-theme="bordeaux"] .dot-sky {
+            box-shadow: 0 0 6px #8CADF6;
+        }
+
         /* ==========================================================================
-           4. CABECERA: LOGO VECTORIAL OFICIAL DE AUTOR CON MÁXIMA JERARQUÍA
+           4. CABECERA: LOGO CON MÁXIMA JERARQUÍA RECUPERADA (315px)
            ========================================================================== */
         .brand-monument-header {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 14px 4px 2px;
-            gap: 10px;
+            padding: 6px 4px 2px;
+            gap: 12px;
             width: 100%;
         }
 
         .brand-logo-frame {
             width: 100%;
-            max-width: 250px;
+            max-width: 315px; /* TAMAÑO Y JERARQUÍA COMPLETA RECUPERADA */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -205,14 +289,15 @@
         .meraki-svg-logo {
             width: 100%;
             height: auto;
-            max-height: 125px;
+            max-height: 145px; /* ESCALA IMPONENTE */
             display: block;
-            filter: drop-shadow(0 4px 10px rgba(96, 0, 0, 0.12));
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
+            transition: filter 0.3s ease;
         }
 
         .meraki-svg-reflection {
             width: 100%;
-            height: 20px;
+            height: 22px;
             margin-top: 1px;
             opacity: 0.18;
             transform: scaleY(-0.75);
@@ -224,9 +309,9 @@
 
         .brand-motto-headline {
             font-family: var(--font-display);
-            font-size: clamp(1.4rem, 5.2vw, 1.75rem);
+            font-size: clamp(1.45rem, 5.4vw, 1.82rem);
             font-weight: 500;
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             line-height: 1.15;
             letter-spacing: 0.02em;
             margin-top: 2px;
@@ -283,7 +368,7 @@
            5. HERO CONVERSIÓN WHATSAPP OFICIAL
            ========================================================================== */
         .btn-whatsapp-hero {
-            background: linear-gradient(135deg, var(--meraki-vino) 0%, var(--meraki-vino-dark) 100%);
+            background: linear-gradient(135deg, #600000 0%, #3F0000 100%);
             border: 2px solid rgba(194, 213, 254, 0.45);
             border-radius: 22px;
             padding: 18px 20px;
@@ -298,6 +383,11 @@
             transition: all 0.26s var(--spring);
             cursor: pointer;
             width: 100%;
+        }
+
+        body[data-theme="bordeaux"] .btn-whatsapp-hero {
+            background: linear-gradient(135deg, #2D0000 0%, #1A0000 100%);
+            border: 2px solid rgba(194, 213, 254, 0.6);
         }
 
         .btn-whatsapp-hero::before {
@@ -402,7 +492,7 @@
         .video-reel-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(96,0,0,0.85) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(60,0,0,0.88) 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -464,6 +554,7 @@
             transition: all 0.26s var(--spring);
             cursor: pointer;
             min-width: 0;
+            background: var(--bg-surface);
         }
 
         .bento-cell:hover {
@@ -473,22 +564,23 @@
         }
 
         .cell-ellas {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FAF6EE 100%);
             border-top: 4px solid var(--destacada-ellas);
         }
 
         .cell-hogar {
             background: var(--destacada-hogar);
-            border-top: 4px solid var(--meraki-vino);
+            border-top: 4px solid #600000;
+        }
+
+        body[data-theme="bordeaux"] .cell-hogar {
+            border-top: 4px solid #C2D5FE;
         }
 
         .cell-aroma {
-            background: #FFFFFF;
             border-top: 4px solid var(--destacada-aroma);
         }
 
         .cell-ellos {
-            background: #FFFFFF;
             border-top: 4px solid var(--destacada-ellos);
         }
 
@@ -498,8 +590,11 @@
             align-items: center;
             min-height: auto;
             padding: 18px 18px;
-            background: #FFFFFF;
-            border-left: 5px solid var(--meraki-vino);
+            border-left: 5px solid #600000;
+        }
+
+        body[data-theme="bordeaux"] .cell-full-span {
+            border-left: 5px solid #C2D5FE;
         }
 
         .cell-top-bar {
@@ -515,7 +610,11 @@
             font-weight: 800;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--meraki-vino);
+            color: #600000;
+        }
+
+        body[data-theme="bordeaux"] .cell-tag {
+            color: #C2D5FE;
         }
 
         .cell-arrow {
@@ -527,7 +626,7 @@
 
         .bento-cell:hover .cell-arrow {
             transform: translate(3px, -3px);
-            color: var(--meraki-vino);
+            color: var(--color-border-hover);
         }
 
         .cell-title {
@@ -564,7 +663,6 @@
             width: 100%;
         }
 
-        /* FILIGRANA DE ONDAS DISRUPTIVAS DENTRO DEL POD DE AROMAS */
         .pod-intenciones-bienestar::before {
             content: '';
             position: absolute;
@@ -690,7 +788,7 @@
             font-family: var(--font-display);
             font-size: 1.45rem;
             font-weight: 500;
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             line-height: 1.1;
         }
 
@@ -708,7 +806,7 @@
         .product-meraki-card {
             flex: 0 0 190px;
             scroll-snap-align: start;
-            background: #FFFFFF;
+            background: var(--bg-surface-elevated);
             border: 1px solid var(--color-border);
             border-radius: 16px;
             padding: 10px;
@@ -752,7 +850,7 @@
             position: absolute;
             top: 7px;
             left: 7px;
-            background: var(--meraki-vino);
+            background: #600000;
             color: #FFFFFF;
             font-family: var(--font-mono);
             font-size: 0.58rem;
@@ -761,6 +859,11 @@
             text-transform: uppercase;
             padding: 3px 8px;
             border-radius: 999px;
+        }
+
+        body[data-theme="bordeaux"] .product-tag-badge {
+            background: #C2D5FE;
+            color: #420000;
         }
 
         .product-info-stack {
@@ -820,17 +923,18 @@
             height: 36px;
             border-radius: 50%;
             background: var(--bg-surface-elevated);
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            font-size: 1.1rem;
         }
 
         .store-name-title {
             font-family: var(--font-display);
             font-size: 1.3rem;
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             font-weight: 600;
         }
 
@@ -866,7 +970,7 @@
             border-radius: 12px;
             font-size: 0.76rem;
             font-weight: 800;
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             text-decoration: none;
             transition: background-color 0.2s ease;
         }
@@ -893,7 +997,7 @@
             border-radius: 50%;
             background: var(--bg-surface);
             border: 1px solid var(--color-border);
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -904,9 +1008,9 @@
 
         .social-round-btn:hover {
             transform: translateY(-3px) scale(1.08);
-            background: var(--meraki-vino);
+            background: var(--color-border-hover);
             color: #FFFFFF;
-            border-color: var(--meraki-vino);
+            border-color: var(--color-border-hover);
         }
 
         .social-round-btn svg {
@@ -928,7 +1032,7 @@
         }
 
         .floating-pill-label {
-            background: var(--meraki-vino);
+            background: #600000;
             color: #FFFFFF;
             font-family: var(--font-mono);
             font-size: 0.70rem;
@@ -938,6 +1042,11 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
             letter-spacing: 0.08em;
             text-transform: uppercase;
+        }
+
+        body[data-theme="bordeaux"] .floating-pill-label {
+            background: #C2D5FE;
+            color: #420000;
         }
 
         .floating-circle-btn {
@@ -979,7 +1088,7 @@
         .colophon-signature {
             font-family: var(--font-display);
             font-size: 1.4rem;
-            color: var(--meraki-vino);
+            color: var(--color-text-main);
             letter-spacing: 0.08em;
         }
 
@@ -1002,9 +1111,9 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="celeste">
 
-    <!-- CAPA 1: DERIVA PERPETUA DE LUNARES VECTORIALES MERAKI EN GPU -->
+    <!-- CAPA 1: DERIVA PERPETUA DE LUNARES VECTORIALES EN GPU -->
     <div class="ambient-dots-layer" aria-hidden="true"></div>
     <div class="ambient-spotlight" aria-hidden="true"></div>
 
@@ -1037,13 +1146,21 @@
     <!-- CONTENEDOR CENTRAL MAESTRO -->
     <main class="master-hub-shell">
 
-        <!-- 1. CABECERA: LOGO VECTORIAL OFICIAL DE AUTOR CON MÁXIMA JERARQUÍA -->
+        <!-- MICRO-BARRA SUPERIOR CON EL SWITCH DE COLOR MINIMALISTA -->
+        <div class="top-micro-bar">
+            <button class="theme-micro-pill" onclick="toggleDualTheme()" aria-label="Alternar modo de color" title="Alternar modo de color">
+                <span class="micro-dot dot-vino"></span>
+                <span class="micro-dot dot-sky"></span>
+            </button>
+        </div>
+
+        <!-- 1. CABECERA: LOGO CON JERARQUÍA RESTAURADA (315px) -->
         <header class="brand-monument-header">
             
             <div class="brand-logo-frame" onclick="playHaptic()" aria-label="MeraKi Indumentaria Deco & Home">
-                <!-- SVG LOGO OFICIAL ORIGINAL VECTORIAL LIMPIO -->
+                <!-- SVG LOGO OFICIAL ORIGINAL VECTORIAL CON FILL DINÁMICO -->
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.51 184.32" class="meraki-svg-logo">
-                    <g fill="#600000">
+                    <g fill="var(--meraki-logo-color)">
                         <path d="M68.89,41.68c3.92-6.23,7.47-12.27,11.42-18.03,2.12-3.08,4.87-5.75,7.45-8.49.97-1.03,2.2-1.86,3.43-2.6,7.05-4.27,12.28-2.01,13.75,6.11,1.52,8.36.37,16.7-1.06,24.94-1.56,9.02-3.54,17.96-5.46,27.5.65-1.17,1.06-1.94,1.49-2.7,8.53-14.99,16.98-30.03,25.67-44.93,1.83-3.15,4.47-5.84,6.85-8.65,1.84-2.17,4.04-2.85,6.64-1.09,1.93,1.3,4.07,2.32,5.91,3.73,5.32,4.07,6.78,9.17,3.89,15.25-1.68,3.53-4.02,6.8-6.4,9.93-9.87,12.9-16.26,27.29-18.52,43.39-.51,3.6-.48,7.4.06,11,1.38,9.26,7.24,13.56,16.53,12.63,3.88-.39,4.71.16,5.94,3.95,1.98,6.11-1.98,13.3-8.32,15.12-13.77,3.95-23.59-2.84-25.36-17.52-1.55-12.81,1.2-25.06,5.06-37.11,4.03-12.57,9.83-24.3,17.1-35.32,1.06-1.61,1.88-3.5,2.26-5.37.2-.97-.55-2.55-1.38-3.16-.65-.47-2.45-.26-3.12.34-2.98,2.69-6.1,5.36-8.52,8.53-10.11,13.29-17.33,28.33-25.7,42.69-7.32,12.57-10.11,26.18-12.13,40.19-.08.53-.18,1.06-.28,1.59-1.24,6.53-5.89,9.3-12.32,7.36-3.41-1.03-4.8-3.15-3.72-6.52,2.91-9.07,6.13-18.03,9.01-27.11,5.29-16.69,10.53-33.4,15.54-50.18,1.06-3.56,1.28-7.44,1.4-11.19.13-4.24-3.21-6.8-7.21-5.28-2.55.97-5.02,2.86-6.83,4.95-5.31,6.13-8.49,13.53-11.31,21.02-8.81,23.38-14.88,47.47-18.28,72.23-.25,1.84-1.11,3.21-2.92,3.36-2.27.19-4.67.3-6.85-.24-3.01-.75-4.2-2.71-3.47-5.72,2.16-8.9,4.2-17.85,6.96-26.57,3.25-10.27,7.21-20.31,10.87-30.45,2.83-7.85,4.62-15.88,4.06-24.28-.59-8.83-5.21-14.3-13.93-15.13-15.34-1.46-28.61,3.13-38.67,15.28-2.66,3.21-4.64,6.9-4.51,11.28.15,5.19,2.85,8.15,8.05,8.15,3.64,0,7.32-.65,10.92-1.31,2.64-.48,5.19-1.43,7.77-2.21,4.37-1.31,6.41.15,6.65,4.8.33,6.29-2.39,10.21-8.64,12.47-4.78,1.73-10.17,2.36-15.3,2.36-5.65,0-9.32-3.8-11.39-8.94-2.66-6.6-2.41-13.42-.88-20.17,3.41-15.06,10.5-27.87,24.47-35.49,14.66-7.99,29.32-5.5,38.14,10.04,2.34,4.12,3.26,9.06,4.8,13.63.19.56.21,1.18.34,1.94Z"/>
                         <path d="M139.62,85.82c-1.15,3.94-.56,4.84,3.22,4.61,6.24-.38,12.06-2.25,16.98-6.13,1.89-1.49,3.5-3.65,4.58-5.82,2.19-4.42,3.89-9.08,5.86-13.61,1.77-4.08,5.11-4.76,8.28-1.67,2.97,2.88,5.81,5.88,8.78,8.76,1.94,1.88,2.28,3.92,1.17,6.35-1.31,2.86-2.53,5.76-3.75,8.66-.37.87-.6,1.8-1.09,3.34,5.7-2.55,9.72-5.86,11.83-11.12,2.2-5.51,5.05-10.54,9.81-14.25,3.15-2.46,6.66-3.91,10.73-3.58,3.11.25,5.43,1.81,6.82,4.6.95,1.9.64,3.75-.92,5.18-1.63,1.49-3.7,1.83-5.41.39-1.89-1.6-3.52-1.09-5.09.09-5.37,4.03-8.03,9.58-8.42,16.17-.16,2.73,1.24,3.37,3.58,1.84,3.44-2.24,5.49-5.62,7.13-9.27.59-1.31,1.02-2.7,1.68-3.97,1.27-2.45,3.62-3.42,5.83-2.52,2.25.92,3.23,3.47,2.22,6.11-1.26,3.29-2.37,6.57-1.36,11.09,1.99-1.79,4.02-2.96,5.07-4.71,2.25-3.74,4.48-7.62,5.83-11.74,3.35-10.15,6.18-20.5,11.44-29.89,1.7-3.03,3.79-5.9,6.08-8.52,2.56-2.94,5.97-4.06,9.97-3.5,5.91.83,8.92,5.24,6.77,10.84-1.14,2.97-3.03,5.68-4.74,8.41-1.09,1.75-2.45,3.32-3.73,4.95-1.21,1.55-2.45,3.06-3.81,4.75,4.71,1.71,7.32,4.9,7.03,9.65-.37,6.01-3.86,10.09-9.19,12.65-1.12.54-2.34.88-3.47,1.31,0,.32-.06.53,0,.67,2.67,5.05,2.02,5.6,7.94,2.65,5.33-2.65,9.38-6.49,11.34-12.36,1.08-3.23,2.62-6.3,4.04-9.41,1.26-2.75,3.76-3.78,6.12-2.65,2.31,1.11,3.04,3.46,1.92,6.22-1.75,4.33-3.69,8.59-5.19,13-.71,2.08-.61,4.43-.94,7.25,5.32-1.68,8.23-4.88,10.72-8.55.7-1.03,1.16-2.23,1.72-3.35,1.22-2.45,3.48-3.43,5.77-2.47,2.26.94,3.32,3.27,2.37,5.85-1.91,5.19-5.26,9.41-9.62,12.75-1.97,1.51-4.19,2.87-6.5,3.74-5.34,2-8.83.44-12.29-4.93-3.31,1.57-6.49,3.42-9.91,4.62-6.78,2.38-9.97,1.05-13.71-5.15-1.15-1.9-2.24-3.83-3.96-5.7-.4,2.13-.89,4.26-1.16,6.41-.27,2.25-.75,4.33-3.12,5.22-2.37.88-4.18-.16-5.36-1.68-2.9.68-5.61,1.96-8.18,1.73-2.52-.23-4.9-1.99-7.21-3.01-2.99,1-6.25,2.62-9.66,3.09-3.83.53-6.84-1.72-8.99-5.07-1.91,1.09-3.66,2.39-5.62,3.14-2.4.92-4.95,1.74-7.49,1.96-5.12.45-8.75-3.4-7.8-8.47.71-3.75,1.94-7.5,3.58-10.95,1.36-2.88.69-4.45-2-5.93-.63,1.46-1.37,2.87-1.85,4.36-3.67,11.29-12.24,16.94-23.07,19.72-3.52.91-7.28,1.32-10.91,1.23-6.29-.16-10.51-4.59-10.15-10.88.57-9.88,4.67-18.26,12.56-24.38,5.26-4.08,11.9-3.42,15.54,1.04,3.7,4.53,2.85,11.91-1.92,16.36-3.99,3.73-8.84,4.96-14.16,4.72-.88-.04-1.76-.15-2.61-.22ZM142.54,76.65c4.4.7,7.91-.8,8.83-3.5.25-.74.25-1.99-.2-2.42-.43-.41-1.88-.39-2.38.03-2.08,1.74-3.97,3.7-6.26,5.9ZM243.49,76.69c5.3.55,9.34-2.06,9.33-6.02-3.59-.46-7.62,2.14-9.33,6.02ZM258.64,42.11c-.41-.29-.82-.57-1.23-.86-2.36,3.55-4.71,7.09-7.07,10.64.26.18.53.36.79.55,2.5-3.44,5.01-6.88,7.51-10.32Z"/>
                         <path d="M153.85,114.21c.94-.35,1.85-.85,2.82-1.03,18.63-3.48,37.43-5.67,56.36-6.56,18.12-.85,36.24-1.52,54.37-2.13,2.27-.08,4.58.57,6.82,1.1.57.14,1.23,1.11,1.3,1.76.05.45-.76,1.31-1.33,1.46-1.89.5-3.84,1.05-5.77,1.09-17.43.33-34.88.03-52.27.96-18.08.97-36.09,3.12-54.13,4.75-1.79.16-3.58.4-5.36.34-.95-.03-1.88-.61-2.82-.95,0-.27,0-.54.01-.81Z"/>
@@ -1058,7 +1175,7 @@
 
                 <!-- REFLEJO EN ESPEJO -->
                 <svg viewBox="0 0 295.51 184.32" xmlns="http://www.w3.org/2000/svg" class="meraki-svg-reflection" aria-hidden="true">
-                    <g fill="#600000">
+                    <g fill="var(--meraki-logo-color)">
                         <path d="M68.89,41.68c3.92-6.23,7.47-12.27,11.42-18.03,2.12-3.08,4.87-5.75,7.45-8.49.97-1.03,2.2-1.86,3.43-2.6,7.05-4.27,12.28-2.01,13.75,6.11,1.52,8.36.37,16.7-1.06,24.94-1.56,9.02-3.54,17.96-5.46,27.5.65-1.17,1.06-1.94,1.49-2.7,8.53-14.99,16.98-30.03,25.67-44.93,1.83-3.15,4.47-5.84,6.85-8.65,1.84-2.17,4.04-2.85,6.64-1.09,1.93,1.3,4.07,2.32,5.91,3.73,5.32,4.07,6.78,9.17,3.89,15.25-1.68,3.53-4.02,6.8-6.4,9.93-9.87,12.9-16.26,27.29-18.52,43.39-.51,3.6-.48,7.4.06,11,1.38,9.26,7.24,13.56,16.53,12.63,3.88-.39,4.71.16,5.94,3.95,1.98,6.11-1.98,13.3-8.32,15.12-13.77,3.95-23.59-2.84-25.36-17.52-1.55-12.81,1.2-25.06,5.06-37.11,4.03-12.57,9.83-24.3,17.1-35.32,1.06-1.61,1.88-3.5,2.26-5.37.2-.97-.55-2.55-1.38-3.16-.65-.47-2.45-.26-3.12.34-2.98,2.69-6.1,5.36-8.52,8.53-10.11,13.29-17.33,28.33-25.7,42.69-7.32,12.57-10.11,26.18-12.13,40.19-.08.53-.18,1.06-.28,1.59-1.24,6.53-5.89,9.3-12.32,7.36-3.41-1.03-4.8-3.15-3.72-6.52,2.91-9.07,6.13-18.03,9.01-27.11,5.29-16.69,10.53-33.4,15.54-50.18,1.06-3.56,1.28-7.44,1.4-11.19.13-4.24-3.21-6.8-7.21-5.28-2.55.97-5.02,2.86-6.83,4.95-5.31,6.13-8.49,13.53-11.31,21.02-8.81,23.38-14.88,47.47-18.28,72.23-.25,1.84-1.11,3.21-2.92,3.36-2.27.19-4.67.3-6.85-.24-3.01-.75-4.2-2.71-3.47-5.72,2.16-8.9,4.2-17.85,6.96-26.57,3.25-10.27,7.21-20.31,10.87-30.45,2.83-7.85,4.62-15.88,4.06-24.28-.59-8.83-5.21-14.3-13.93-15.13-15.34-1.46-28.61,3.13-38.67,15.28-2.66,3.21-4.64,6.9-4.51,11.28.15,5.19,2.85,8.15,8.05,8.15,3.64,0,7.32-.65,10.92-1.31,2.64-.48,5.19-1.43,7.77-2.21,4.37-1.31,6.41.15,6.65,4.8.33,6.29-2.39,10.21-8.64,12.47-4.78,1.73-10.17,2.36-15.3,2.36-5.65,0-9.32-3.8-11.39-8.94-2.66-6.6-2.41-13.42-.88-20.17,3.41-15.06,10.5-27.87,24.47-35.49,14.66-7.99,29.32-5.5,38.14,10.04,2.34,4.12,3.26,9.06,4.8,13.63.19.56.21,1.18.34,1.94Z"/>
                     </g>
                 </svg>
@@ -1132,7 +1249,7 @@
             <!-- LUZ & AROMA -->
             <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20saber%20sobre%20los%20aromatizantes%20y%20sahumerios." target="_blank" rel="noopener noreferrer" class="bento-cell cell-aroma" onclick="playHaptic()">
                 <div class="cell-top-bar">
-                    <span class="cell-tag" style="color:#214E53;">03 · LUZ & AROMA</span>
+                    <span class="cell-tag" style="color:var(--destacada-aroma);">03 · LUZ & AROMA</span>
                     <span class="cell-arrow">↗</span>
                 </div>
                 <div>
@@ -1144,7 +1261,7 @@
             <!-- ELLOS -->
             <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quisiera%20consultar%20por%20la%20l%C3%ADnea%20masculina%20y%20fragancias." target="_blank" rel="noopener noreferrer" class="bento-cell cell-ellos" onclick="playHaptic()">
                 <div class="cell-top-bar">
-                    <span class="cell-tag" style="color:#555;">04 · ELLOS</span>
+                    <span class="cell-tag" style="color:var(--destacada-ellos);">04 · ELLOS</span>
                     <span class="cell-arrow">↗</span>
                 </div>
                 <div>
@@ -1162,7 +1279,7 @@
                     <h3 class="cell-title" style="font-size: 1.35rem;">Edición Regalos MeraKi</h3>
                     <p class="cell-desc">Armamos sets personalizados de deco, sahumado y prendas para regalar.</p>
                 </div>
-                <span class="cell-arrow" style="font-size: 1.35rem; color: var(--meraki-vino); margin-left: 8px;">↗</span>
+                <span class="cell-arrow" style="font-size: 1.35rem; color: var(--color-border-hover); margin-left: 8px;">↗</span>
             </a>
 
         </section>
@@ -1199,7 +1316,7 @@
                     <h3 class="showcase-title-serif">Nuevas Joyitas en Stock</h3>
                     <span style="font-size: 0.74rem; color: var(--color-text-muted); font-weight: 600;">Elegidos para renovar tu armario y tu hogar</span>
                 </div>
-                <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20conocer%20todos%20los%20ingresos%20disponibles." target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: 0.70rem; font-weight: 800; color: var(--meraki-vino); text-decoration: none;">Ver todo →</a>
+                <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20conocer%20todos%20los%20ingresos%20disponibles." target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: 0.70rem; font-weight: 800; color: var(--color-border-hover); text-decoration: none;">Ver todo →</a>
             </div>
 
             <div class="showcase-track-scroll">
@@ -1307,16 +1424,15 @@
 
     <!-- ==========================================================================
          MOTOR JS DE ULTRA-VELOCIDAD: WASM + WEB WORKER + IDLE CALLBACK + INTERSECTION OBSERVER
-         ========================================================================== -->
+         ========================================================================== */
     <script>
         // 1. MÓDULO WEBASSEMBLY (WASM) INLINE NATIVO EN MEMORIA
-        // Binario compacto que ejecuta sumas y cálculos de tiempo a nivel de CPU
         const wasmByteCode = new Uint8Array([
-            0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, // Magic & Version
-            0x01, 0x07, 0x01, 0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f, // Type section
-            0x03, 0x02, 0x01, 0x00, // Function section
-            0x07, 0x07, 0x01, 0x03, 0x61, 0x64, 0x64, 0x00, 0x00, // Export "add"
-            0x0a, 0x09, 0x01, 0x07, 0x00, 0x20, 0x00, 0x20, 0x01, 0x6a, 0x0b // Code: local.get 0, local.get 1, i32.add
+            0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00,
+            0x01, 0x07, 0x01, 0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f,
+            0x03, 0x02, 0x01, 0x00,
+            0x07, 0x07, 0x01, 0x03, 0x61, 0x64, 0x64, 0x00, 0x00,
+            0x0a, 0x09, 0x01, 0x07, 0x00, 0x20, 0x00, 0x20, 0x01, 0x6a, 0x0b
         ]);
 
         let wasmInstance = null;
@@ -1326,7 +1442,7 @@
             }).catch(() => {});
         }
 
-        // 2. INLINE WEB WORKER: PRECARGA EN SEGUNDO PLANO MULTINÚCLEO (CERO BLOQUEO DEL SCROLL)
+        // 2. INLINE WEB WORKER: PRECARGA EN SEGUNDO PLANO MULTINÚCLEO
         const workerBlobScript = `
             self.onmessage = function(e) {
                 if (e.data && e.data.urls) {
@@ -1340,7 +1456,6 @@
             const blob = new Blob([workerBlobScript], { type: 'application/javascript' });
             const backgroundWorker = new Worker(URL.createObjectURL(blob));
             
-            // Programar precarga selectiva en tiempo ocioso (requestIdleCallback)
             const scheduleAssetPreload = window.requestIdleCallback || function(cb) { setTimeout(cb, 400); };
             scheduleAssetPreload(() => {
                 backgroundWorker.postMessage({
@@ -1383,17 +1498,16 @@
         // Horario real: Lun a Vier: 9:00 a 12:30 | 16:30 a 21:00
         function updateStoreStatus() {
             const now = new Date();
-            const day = now.getDay(); // 0 = Dom, 6 = Sáb
+            const day = now.getDay();
             const hours = now.getHours();
             const minutes = now.getMinutes();
             
-            // Si el módulo WASM está disponible, se utiliza para la operación de tiempo
             const timeInMinutes = wasmInstance ? wasmInstance.add(hours * 60, minutes) : (hours * 60 + minutes);
 
-            const morningOpen = 9 * 60;          // 9:00
-            const morningClose = 12 * 60 + 30;   // 12:30
-            const eveningOpen = 16 * 60 + 30;    // 16:30
-            const eveningClose = 21 * 60;        // 21:00
+            const morningOpen = 9 * 60;
+            const morningClose = 12 * 60 + 30;
+            const eveningOpen = 16 * 60 + 30;
+            const eveningClose = 21 * 60;
 
             const isWeekday = day >= 1 && day <= 5;
             const isOpenNow = isWeekday && (
@@ -1452,7 +1566,20 @@
             }
         }
 
-        // 7. RESPUESTA HÁPTICA MÓVIL
+        // 7. CONTROL DEL MODO DUAL (CELESTE/LAVANDA ORIGINAL VS BORDEAUX CHIC)
+        function toggleDualTheme() {
+            playHaptic();
+            const currentTheme = document.body.getAttribute('data-theme') || 'celeste';
+            const nextTheme = currentTheme === 'celeste' ? 'bordeaux' : 'celeste';
+            
+            document.body.setAttribute('data-theme', nextTheme);
+
+            try {
+                localStorage.setItem('meraki_theme_mode', nextTheme);
+            } catch(e) {}
+        }
+
+        // 8. RESPUESTA HÁPTICA MÓVIL
         function playHaptic() {
             if ('vibrate' in navigator) {
                 try { navigator.vibrate(8); } catch(e) {}
@@ -1461,6 +1588,13 @@
 
         // INICIALIZACIÓN ÓPTIMA
         window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const savedTheme = localStorage.getItem('meraki_theme_mode');
+                if (savedTheme === 'bordeaux') {
+                    document.body.setAttribute('data-theme', 'bordeaux');
+                }
+            } catch(e) {}
+
             updateStoreStatus();
             decodeImagesAsync();
         });
