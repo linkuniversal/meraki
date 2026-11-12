@@ -1,47 +1,1469 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.51 184.32">
-  <defs>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>MeraKi · Indumentaria Deco & Home | Puerto Iguazú</title>
+    <meta name="description" content="Moda, hogar y bienestar espiritual en Puerto Iguazú. Ropa femenina, decoración, aromas textiles y sahumado. Ushuaia 196 esq. Jangadero.">
+
+    <meta name="theme-color" content="#FAF7F2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- TIPOGRAFÍAS DE ALTA GAMA: ITALIANA + PLUS JAKARTA SANS + SPACE GROTESK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
     <style>
-      .cls-1 {
-        fill: #600000;
-        stroke-width: 0px;
-      }
+        /* ==========================================================================
+           1. SISTEMA CROMÁTICO DEFINITIVO (IDENTIDAD OFICIAL MERAKI)
+           ========================================================================== */
+        :root {
+            --bg-body: #FAF7F2;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #F3ECE2;
+            
+            --meraki-vino: #600000;
+            --meraki-vino-dark: #3F0000;
+            --meraki-vino-glow: rgba(96, 0, 0, 0.20);
+            
+            --meraki-sky: #C2D5FE;
+            --meraki-cornflower: #8CADF6;
+            --meraki-sky-soft: rgba(194, 213, 254, 0.35);
+
+            --color-text-main: #241A17;
+            --color-text-muted: #6B5E57;
+            --color-border: #E8DED2;
+            --color-border-hover: #600000;
+            
+            /* DESTACADAS DE INSTAGRAM */
+            --destacada-ellas: #DCCDB6;
+            --destacada-hogar: #F7F3E8;
+            --destacada-aroma: #98C7CD;
+            --destacada-ice: #CEE8E9;
+            --destacada-ellos: #BFBFBF;
+
+            --font-display: 'Italiana', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Space Grotesk', monospace;
+
+            --shadow-card: 0 10px 28px -6px rgba(96, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 16px 36px -8px rgba(96, 0, 0, 0.20), 0 6px 14px rgba(0, 0, 0, 0.05);
+            --spring: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================================================
+           2. BASE, RESET & BLINDAJE PARA EL WEBVIEW DE INSTAGRAM
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            background-color: var(--bg-body);
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--color-text-main);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            min-height: 100dvh; /* Previene el bug de altura al scrollear en el navegador de Instagram */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 14px calc(76px + env(safe-area-inset-bottom, 0px));
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            letter-spacing: -0.01em;
+        }
+
+        /* CAPA 1: PATRÓN DE LUNARES VECTORIALES CON MAYOR PRESENCIA DEL BLANCO */
+        .ambient-dots-layer {
+            position: fixed;
+            top: 0;
+            left: -210px;
+            width: calc(100vw + 420px);
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.22; /* Opacidad optimizada para realce sutil y elegante de los puntos blancos */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 419.87 524.84' width='140' height='175'%3E%3Cpath fill='%23C3D6FF' fill-opacity='0.75' d='M419.82,470.37c0,17.49-.03,34.98.05,52.46,0,1.63-.3,2-1.98,2-138.61-.05-277.22-.05-415.83,0-1.9,0-2.04-.64-2.04-2.21C.04,349.14.04,175.64,0,2.15,0,.44.36.01,2.12.02,140.63.06,279.15.07,417.67,0c2.04,0,2.19.6,2.19,2.35-.05,153.41-.04,306.83-.04,460.24-2.03.12-2.22-1.65-2.78-2.88-2.54-5.55-6.76-8.81-12.77-9.93-8.56-1.59-17.99,4.95-19.16,13.6-.88,6.48.88,12.2,6.23,16.26,5.09,3.87,10.82,4.56,16.78,2.17,4.22-1.69,7.21-4.69,8.99-8.92.5-1.18.73-2.84,2.7-2.53Z'/%3E%3Ccircle cx='302' cy='212' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='220' cy='466' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='212' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='302' cy='32' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='394' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='392' cy='303' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='392' cy='122' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='302' cy='394' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='38' cy='464' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='28' cy='119' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='28' cy='300' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='210' cy='300' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='210' cy='119' r='18' fill='%23FFFFFF'/%3E%3Ccircle cx='120' cy='29' r='18' fill='%23FFFFFF'/%3E%3C/svg%3E");
+            background-size: 140px 175px;
+            background-repeat: repeat;
+            will-change: transform;
+            animation: driftRightForever 34s linear infinite;
+        }
+
+        @keyframes driftRightForever {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(140px, 0, 0); }
+        }
+
+        /* CAPA 2: SPOTLIGHT AMBIENTAL */
+        .ambient-spotlight {
+            position: fixed;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(340px, 95vw, 760px);
+            height: 520px;
+            background: radial-gradient(ellipse at center, rgba(194, 213, 254, 0.40) 0%, rgba(250, 247, 242, 0) 72%);
+            pointer-events: none;
+            z-index: 2;
+            filter: blur(50px);
+        }
+
+        .master-hub-shell {
+            width: 100%;
+            max-width: 485px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 10;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           3. MARQUESINA SUPERIOR EDITORIAL
+           ========================================================================== */
+        .marquee-top-strip {
+            width: calc(100% + 28px);
+            margin-left: -14px;
+            margin-right: -14px;
+            background: var(--meraki-vino);
+            color: #FFFFFF;
+            overflow: hidden;
+            padding: 8px 0;
+            display: flex;
+            white-space: nowrap;
+            position: relative;
+            z-index: 20;
+            box-shadow: 0 4px 14px var(--meraki-vino-glow);
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            gap: 28px;
+            animation: marqueeTape 26s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-track span {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @keyframes marqueeTape {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ==========================================================================
+           4. CABECERA: LOGO VECTORIAL OFICIAL DE AUTOR CON MÁXIMA JERARQUÍA
+           ========================================================================== */
+        .brand-monument-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 14px 4px 2px;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .brand-logo-frame {
+            width: 100%;
+            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s var(--spring);
+        }
+
+        .brand-logo-frame:hover {
+            transform: scale(1.025);
+        }
+
+        .meraki-svg-logo {
+            width: 100%;
+            height: auto;
+            max-height: 125px;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(96, 0, 0, 0.12));
+        }
+
+        .meraki-svg-reflection {
+            width: 100%;
+            height: 20px;
+            margin-top: 1px;
+            opacity: 0.18;
+            transform: scaleY(-0.75);
+            filter: blur(0.8px);
+            mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .brand-motto-headline {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 5.2vw, 1.75rem);
+            font-weight: 500;
+            color: var(--meraki-vino);
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            margin-top: 2px;
+        }
+
+        .brand-manifesto-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 18px;
+            padding: 12px 18px;
+            box-shadow: var(--shadow-card);
+            width: 100%;
+        }
+
+        .brand-manifesto-box p {
+            font-size: 0.84rem;
+            line-height: 1.45;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* STATUS EN VIVO DEL LOCAL (USHUAIA 196) */
+        .store-live-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #25D366;
+            box-shadow: 0 0 8px #25D366;
+            animation: pulseLive 1.6s infinite;
+        }
+
+        @keyframes pulseLive {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.7); opacity: 0.5; }
+        }
+
+        /* ==========================================================================
+           5. HERO CONVERSIÓN WHATSAPP OFICIAL
+           ========================================================================== */
+        .btn-whatsapp-hero {
+            background: linear-gradient(135deg, var(--meraki-vino) 0%, var(--meraki-vino-dark) 100%);
+            border: 2px solid rgba(194, 213, 254, 0.45);
+            border-radius: 22px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: #FFFFFF;
+            box-shadow: 0 14px 34px -6px var(--meraki-vino-glow);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.26s var(--spring);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-whatsapp-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -120%;
+            width: 60%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+            transform: skewX(-25deg);
+            animation: heroSheen 5.8s infinite ease-in-out;
+        }
+
+        @keyframes heroSheen {
+            0%, 60% { left: -120%; }
+            85%, 100% { left: 180%; }
+        }
+
+        .btn-whatsapp-hero:hover {
+            transform: translateY(-3px) scale(1.015);
+        }
+
+        .hero-wa-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            position: relative;
+            z-index: 2;
+            min-width: 0;
+        }
+
+        .hero-wa-badge {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--meraki-sky);
+        }
+
+        .hero-wa-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.35rem, 4.8vw, 1.55rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-wa-sub {
+            font-size: 0.78rem;
+            color: #F7F3E8;
+            font-weight: 500;
+        }
+
+        .hero-wa-bubble {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s var(--spring);
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .btn-whatsapp-hero:hover .hero-wa-bubble {
+            transform: scale(1.12) rotate(12deg);
+        }
+
+        .hero-wa-bubble svg {
+            width: 25px;
+            height: 25px;
+            fill: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           6. VIDEO REEL "SMART VIEWPORT" (ZERO-LAG INTERSECTIONOBSERVER)
+           ========================================================================== */
+        .video-reel-stage {
+            width: 100%;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #111111;
+            border: 1.5px solid var(--color-border);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            height: 380px;
+        }
+
+        .smart-reel-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-reel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(96,0,0,0.85) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px 18px;
+            color: #FFFFFF;
+            pointer-events: none;
+        }
+
+        .reel-badge-tag {
+            align-self: flex-start;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            margin-bottom: 6px;
+        }
+
+        .reel-title {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .reel-sub {
+            font-size: 0.8rem;
+            color: #F7F3E8;
+            margin-top: 4px;
+        }
+
+        /* ==========================================================================
+           7. GRILLA BENTO MORFOLÓGICA CON ARCOS Y CONTRASTES
+           ========================================================================== */
+        .morph-bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .bento-cell {
+            padding: 16px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 148px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-card);
+            transition: all 0.26s var(--spring);
+            cursor: pointer;
+            min-width: 0;
+        }
+
+        .bento-cell:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-border-hover);
+        }
+
+        .cell-ellas {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF6EE 100%);
+            border-top: 4px solid var(--destacada-ellas);
+        }
+
+        .cell-hogar {
+            background: var(--destacada-hogar);
+            border-top: 4px solid var(--meraki-vino);
+        }
+
+        .cell-aroma {
+            background: #FFFFFF;
+            border-top: 4px solid var(--destacada-aroma);
+        }
+
+        .cell-ellos {
+            background: #FFFFFF;
+            border-top: 4px solid var(--destacada-ellos);
+        }
+
+        .cell-full-span {
+            grid-column: span 2;
+            flex-direction: row;
+            align-items: center;
+            min-height: auto;
+            padding: 18px 18px;
+            background: #FFFFFF;
+            border-left: 5px solid var(--meraki-vino);
+        }
+
+        .cell-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .cell-tag {
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--meraki-vino);
+        }
+
+        .cell-arrow {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            transition: transform 0.2s ease;
+        }
+
+        .bento-cell:hover .cell-arrow {
+            transform: translate(3px, -3px);
+            color: var(--meraki-vino);
+        }
+
+        .cell-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--color-text-main);
+        }
+
+        .cell-desc {
+            font-size: 0.74rem;
+            color: var(--color-text-muted);
+            line-height: 1.35;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           8. POD BIENESTAR: 7 DÍAS / 7 INTENCIONES (CON PATRÓN DE ONDAS EN FILIGRANA)
+           ========================================================================== */
+        .pod-intenciones-bienestar {
+            background: linear-gradient(135deg, #182C30 0%, #0F1C1E 100%);
+            border: 1.5px solid var(--destacada-aroma);
+            border-radius: 24px;
+            padding: 22px 18px;
+            color: #FFFFFF;
+            box-shadow: 0 14px 34px rgba(15, 28, 30, 0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* FILIGRANA DE ONDAS DISRUPTIVAS DENTRO DEL POD DE AROMAS */
+        .pod-intenciones-bienestar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 406.04 507.55'%3E%3Cpath fill='%2398C7CD' fill-opacity='0.12' d='M.05,152.02C.05,102.08.06,52.14,0,2.2,0,.36.36,0,2.2,0c133.88.06,267.76.06,401.64,0,1.84,0,2.21.36,2.2,2.2-.08,26.49-.05,52.98-.05,79.47-1.12.36-1.66-.49-2.17-1.16-10.3-13.38-21.44-26.13-30.76-40.26-7.2-10.93-13.22-22.49-17.83-34.76-1.24-3.31-3.39-4.34-6.92-3.44-1.64.42-.95,1.45-.65,2.3,1.24,3.45,2.57,6.87,4.01,10.24,7.6,17.82,18.06,33.87,30.14,48.93,6.99,8.71,14.14,17.3,20.6,26.43,1.39,1.97,2.87,3.87,3.58,6.22v85.38c-1.6.3-2.15-1.07-2.9-1.95-6.89-8.05-12.64-16.9-18.2-25.88-6.82-11.03-13.39-22.23-20.58-33.03-9.71-14.59-21.93-26.81-35.56-37.75-8.32-6.67-16.24-13.78-22.37-22.64-7.83-11.31-12.22-24.01-15.11-37.32-1.31-6.04-2.18-12.15-3.09-18.26-.35-2.37-4.27-3.84-6.25-2.4-.72.52-.57,1.27-.49,1.96,2.51,19.45,6.29,38.53,16.69,55.62,5.26,8.65,12.17,15.89,19.69,22.56,6.96,6.17,14.38,11.81,21.14,18.21,10.88,10.3,19.33,22.49,27.15,35.16,8.65,14,16.78,28.34,26.68,41.53,3.39,4.51,7.02,8.82,10.76,13.04.96,1.08,1.8,2.21,2.44,3.49v27.92c-.9.95-2.09.89-3.25.92-7.75.2-14.82-2.08-21.45-5.92-8.89-5.14-16.46-12-24.17-18.67-8.8-7.6-17.55-15.25-27.56-21.31-11.03-6.68-23.1-10.42-35.57-13.15-8.12-1.78-16.31-3.34-24.19-6.08-3.05-1.06-6.05-2.23-8.83-3.88-6-3.55-8.52-8.94-7.6-15.85,1.21-8.98,3.75-17.67,5.57-26.52,5.48-26.68.77-51.51-13.01-74.84-6.53-11.06-14.31-21.19-22.45-31.07-2.05-2.49-4.29-3.83-7.57-3.44-1.48.17-3.04.21-4.24-.1,14.7,16.79,28.93,34.19,37.08,55.67,6.27,16.52,7.15,33.45,4.08,50.71-1.24,6.96-2.99,13.81-4.6,20.7-.94,4.03-1.27,8.09-1.37,12.23-.19,7.33,3.09,12.7,8.81,16.82,4.71,3.39,10.09,5.35,15.6,7,8.84,2.65,17.9,4.41,26.89,6.39,18.25,4.03,33.63,13.25,47.48,25.46,7.04,6.21,14.09,12.43,21.5,18.21,7.83,6.1,16.1,11.34,26.03,13.33,3.16.63,6.35,1.05,9.59,1.07,1.16,0,2.35-.03,3.25.92v22.02c-.53.93-1.03,1.86-1.94,2.52-8.75,6.36-18.09,11.51-28.54,14.58-15.47,4.54-29.57.91-42.81-7.24-8.34-5.13-15.51-11.7-22.33-18.75-8.2-8.48-15.53-17.8-24.61-25.45-9.11-7.68-19.39-10.3-31.04-8.04-5.99,1.16-11.74,3.17-17.62,4.75-6.67,1.8-13.4,3.18-20.35,3.18-18.24,0-29.38-8.89-33.45-26.66-1.77-7.71-2.39-15.56-2.71-23.42-.45-11.27-.03-22.55.62-33.79,1.12-19.4,1.36-38.81.83-58.2-.58-21.45-3.51-42.61-11.43-62.79-1.21-3.08-2.46-6.15-4.09-9.04-.95-1.68-5.75-2.81-7.22-1.74-.97.71-.17,1.46.17,2.09,4.24,7.74,7.17,16,9.52,24.47,3.4,12.29,5.13,24.85,6.05,37.55.83,11.43,1.41,22.87.97,34.31-.46,11.78-.86,23.57-1.37,35.36-.75,17.32-1.66,34.67,1.44,51.9,1.05,5.85,2.58,11.52,5.3,16.83,5.81,11.35,15.25,17.38,27.69,19.21,9.61,1.42,18.9-.24,28.13-2.58,6.93-1.76,13.7-4.13,20.77-5.43,7.6-1.41,14.39.43,20.59,4.76,4.71,3.29,8.85,7.25,12.71,11.51,6,6.63,11.87,13.4,18.25,19.66,7.11,6.97,14.8,13.22,23.57,18.07,15.89,8.78,32.33,10.24,49.43,4.07,7.03-2.54,13.5-6.16,19.85-10.03,1.08-.66,2.14-1.79,3.64-.9v66.05c-1.68,2.4-4.33,3.45-6.81,4.59-14.33,6.58-29.45,8.47-45.06,7.24-9.76-.77-19.34-2.43-28.68-5.4-19.81-6.32-36.19-17.62-49.48-33.6-8.42-10.13-15.78-21.05-23.99-31.33-4.37-5.47-9.05-10.61-14.57-14.96-15.03-11.84-31.72-12.2-47.3-1.06-7.74,5.53-14.65,12.03-21.69,18.38-10.7,9.66-21.39,19.32-34.07,26.43-3.3,1.85-6.74,3.33-10.52,3.88-3.58.53-5.87-.73-7.27-4.05-1.38-3.26-1.85-6.69-1.99-10.21-.66-16.43,1.3-32.68,3.46-48.91,2.36-17.74,5.37-35.39,7.62-53.14,1.73-13.71,2.37-27.47,1.73-41.24-1.28-27.37-11.33-51.25-29.27-71.94-10.46-12.07-22.27-22.73-33.94-33.55-11.94-11.07-23.92-22.15-34.19-34.82-3.09-3.81-6.47-3.66-10.43-3.25-.07,1.29.77,1.94,1.35,2.67,4.28,5.4,8.78,10.61,13.56,15.59,17.04,17.77,35.98,33.57,52.98,51.38,14.64,15.35,25.73,32.77,30.47,53.74,1.6,7.07,2.46,14.25,2.88,21.51,1.27,21.51-2.02,42.64-5.14,63.78-2.64,17.88-5.47,35.74-7.07,53.74-.87,9.79-1.36,19.63-.16,29.46.2,1.69.52,3.36,1.01,4.99,2.84,9.3,9.27,12.81,18.62,10.14,6.64-1.89,12.46-5.41,18.06-9.3,11.2-7.78,21.25-16.95,31.28-26.14,6.01-5.5,12-11.03,18.99-15.3,13.04-7.97,25.62-6.94,37.49,2.78,7.78,6.37,13.72,14.32,19.66,22.28,8.03,10.75,15.76,21.73,25.3,31.28,14.27,14.28,31.21,23.78,50.73,28.79,9.04,2.32,18.2,3.64,27.54,4.09,15.07.73,29.59-1.31,43.52-7.24,1.7-.72,3.16-2.53,5.38-1.62v45.64c-2.29,5.18-6.36,9.05-9.92,13.26-6.99,8.28-14.45,16.12-23,22.84-3.18,2.5-6.58,4.63-10.24,6.36-8.16,3.86-16.11,3.39-23.89-1.04-6.26-3.57-11.74-8.18-16.88-13.19-13.08-12.73-24.64-26.93-37.9-39.49-14-13.27-29.54-24.07-48.23-29.7-29.58-8.91-56.8-4.67-81.17,14.83-11,8.8-19.07,20.04-25.95,32.19-5.82,10.28-11.02,20.89-16.94,31.12-5.97,10.34-12.6,20.22-20.81,28.92-3.87,4.1-8.24,7.73-13.48,10.05-6.74,2.98-11.85,1.2-15.17-5.39-2.74-5.44-3.72-11.34-4.23-17.36-1.49-17.75,1.24-35.16,4.31-52.52,3.48-19.65,8.37-39.02,12.2-58.61,3.05-15.55,5.49-31.2,5.51-47.11.02-24.81-7.61-47.11-22.18-67.13-10.7-14.7-23.75-27.19-36.88-39.62-6.62-6.27-13.23-12.56-19.8-18.89-.6-.58-.8-1.39-1.28-2.03Z'/%3E%3C/svg%3E");
+            background-size: 180px 225px;
+            background-repeat: repeat;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .pod-intenciones-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pod-intenciones-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--destacada-aroma);
+            letter-spacing: 0.02em;
+        }
+
+        .intenciones-tabs-row {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 2px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .intenciones-tabs-row::-webkit-scrollbar { display: none; }
+
+        .intencion-btn {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(152, 199, 205, 0.35);
+            color: #FFFFFF;
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.22s var(--spring);
+        }
+
+        .intencion-btn.active {
+            background: var(--destacada-aroma);
+            color: #0F1C1E;
+            border-color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(152, 199, 205, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .intencion-display-box {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px dashed rgba(152, 199, 205, 0.4);
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .intencion-phrase {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #FFFFFF;
+            font-style: italic;
+        }
+
+        .intencion-cta {
+            align-self: flex-start;
+            background: var(--destacada-aroma);
+            color: #0F1C1E;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.70rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-top: 4px;
+            transition: transform 0.2s;
+        }
+
+        .intencion-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           9. SHOWCASE LOOK & LIVING (SNAP SCROLL CON WEBP LOCALES)
+           ========================================================================== */
+        .showcase-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 22px;
+            padding: 18px 16px 20px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .showcase-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 4px;
+        }
+
+        .showcase-title-serif {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 500;
+            color: var(--meraki-vino);
+            line-height: 1.1;
+        }
+
+        .showcase-track-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 4px 2px 10px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .showcase-track-scroll::-webkit-scrollbar { display: none; }
+
+        .product-meraki-card {
+            flex: 0 0 190px;
+            scroll-snap-align: start;
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--color-text-main);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s var(--spring);
+        }
+
+        .product-meraki-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--color-border-hover);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-thumb-container {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #EFE8DB;
+            position: relative;
+        }
+
+        .product-thumb-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .product-meraki-card:hover .product-thumb-container img {
+            transform: scale(1.06);
+        }
+
+        .product-tag-badge {
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            background: var(--meraki-vino);
+            color: #FFFFFF;
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 999px;
+        }
+
+        .product-info-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .product-title {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--color-text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 34px;
+        }
+
+        .product-sub-note {
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           10. TIENDA FÍSICA: USHUAIA 196 ESQ. JANGADERO (PUERTO IGUAZÚ)
+           ========================================================================== */
+        .store-location-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 22px;
+            padding: 18px 16px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .store-location-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .store-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .store-pin-bubble {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-surface-elevated);
+            color: var(--meraki-vino);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .store-name-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--meraki-vino);
+            font-weight: 600;
+        }
+
+        .store-address-text {
+            font-size: 0.76rem;
+            color: var(--color-text-muted);
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .store-map-frame {
+            width: 100%;
+            height: 220px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            background: #EAE6DF;
+        }
+
+        .store-map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .btn-directions-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-surface-elevated);
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            color: var(--meraki-vino);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-directions-link:hover {
+            background-color: var(--color-border);
+        }
+
+        /* ==========================================================================
+           11. REDES OFICIALES & BOTÓN FLOTANTE WHATSAPP CONCIERGE
+           ========================================================================== */
+        .social-network-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 2px;
+            width: 100%;
+        }
+
+        .social-round-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--bg-surface);
+            border: 1px solid var(--color-border);
+            color: var(--meraki-vino);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.22s var(--spring);
+        }
+
+        .social-round-btn:hover {
+            transform: translateY(-3px) scale(1.08);
+            background: var(--meraki-vino);
+            color: #FFFFFF;
+            border-color: var(--meraki-vino);
+        }
+
+        .social-round-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* BOTÓN FLOTANTE CON RESGUARDO SAFE-AREA PARA INSTAGRAM WEBVIEW */
+        .floating-concierge-wrap {
+            position: fixed;
+            bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+            right: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .floating-pill-label {
+            background: var(--meraki-vino);
+            color: #FFFFFF;
+            font-family: var(--font-mono);
+            font-size: 0.70rem;
+            font-weight: 800;
+            padding: 7px 13px;
+            border-radius: 999px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .floating-circle-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+            transition: transform 0.25s var(--spring);
+        }
+
+        .floating-concierge-wrap:hover .floating-circle-btn {
+            transform: scale(1.1) translateY(-2px);
+        }
+
+        .floating-circle-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: #FFFFFF;
+        }
+
+        /* FOOTER */
+        .hub-colophon {
+            margin-top: 14px;
+            padding-top: 22px;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+            width: 100%;
+        }
+
+        .colophon-signature {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--meraki-vino);
+            letter-spacing: 0.08em;
+        }
+
+        .colophon-text {
+            font-size: 0.74rem;
+            color: var(--color-text-muted);
+            max-width: 380px;
+            line-height: 1.45;
+            font-weight: 500;
+        }
+
+        .colophon-copy {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
     </style>
-  </defs>
-  <g>
-    <path class="cls-1" d="M68.89,41.68c3.92-6.23,7.47-12.27,11.42-18.03,2.12-3.08,4.87-5.75,7.45-8.49.97-1.03,2.2-1.86,3.43-2.6,7.05-4.27,12.28-2.01,13.75,6.11,1.52,8.36.37,16.7-1.06,24.94-1.56,9.02-3.54,17.96-5.46,27.5.65-1.17,1.06-1.94,1.49-2.7,8.53-14.99,16.98-30.03,25.67-44.93,1.83-3.15,4.47-5.84,6.85-8.65,1.84-2.17,4.04-2.85,6.64-1.09,1.93,1.3,4.07,2.32,5.91,3.73,5.32,4.07,6.78,9.17,3.89,15.25-1.68,3.53-4.02,6.8-6.4,9.93-9.87,12.9-16.26,27.29-18.52,43.39-.51,3.6-.48,7.4.06,11,1.38,9.26,7.24,13.56,16.53,12.63,3.88-.39,4.71.16,5.94,3.95,1.98,6.11-1.98,13.3-8.32,15.12-13.77,3.95-23.59-2.84-25.36-17.52-1.55-12.81,1.2-25.06,5.06-37.11,4.03-12.57,9.83-24.3,17.1-35.32,1.06-1.61,1.88-3.5,2.26-5.37.2-.97-.55-2.55-1.38-3.16-.65-.47-2.45-.26-3.12.34-2.98,2.69-6.1,5.36-8.52,8.53-10.11,13.29-17.33,28.33-25.7,42.69-7.32,12.57-10.11,26.18-12.13,40.19-.08.53-.18,1.06-.28,1.59-1.24,6.53-5.89,9.3-12.32,7.36-3.41-1.03-4.8-3.15-3.72-6.52,2.91-9.07,6.13-18.03,9.01-27.11,5.29-16.69,10.53-33.4,15.54-50.18,1.06-3.56,1.28-7.44,1.4-11.19.13-4.24-3.21-6.8-7.21-5.28-2.55.97-5.02,2.86-6.83,4.95-5.31,6.13-8.49,13.53-11.31,21.02-8.81,23.38-14.88,47.47-18.28,72.23-.25,1.84-1.11,3.21-2.92,3.36-2.27.19-4.67.3-6.85-.24-3.01-.75-4.2-2.71-3.47-5.72,2.16-8.9,4.2-17.85,6.96-26.57,3.25-10.27,7.21-20.31,10.87-30.45,2.83-7.85,4.62-15.88,4.06-24.28-.59-8.83-5.21-14.3-13.93-15.13-15.34-1.46-28.61,3.13-38.67,15.28-2.66,3.21-4.64,6.9-4.51,11.28.15,5.19,2.85,8.15,8.05,8.15,3.64,0,7.32-.65,10.92-1.31,2.64-.48,5.19-1.43,7.77-2.21,4.37-1.31,6.41.15,6.65,4.8.33,6.29-2.39,10.21-8.64,12.47-4.78,1.73-10.17,2.36-15.3,2.36-5.65,0-9.32-3.8-11.39-8.94-2.66-6.6-2.41-13.42-.88-20.17,3.41-15.06,10.5-27.87,24.47-35.49,14.66-7.99,29.32-5.5,38.14,10.04,2.34,4.12,3.26,9.06,4.8,13.63.19.56.21,1.18.34,1.94Z"/>
-    <path class="cls-1" d="M139.62,85.82c-1.15,3.94-.56,4.84,3.22,4.61,6.24-.38,12.06-2.25,16.98-6.13,1.89-1.49,3.5-3.65,4.58-5.82,2.19-4.42,3.89-9.08,5.86-13.61,1.77-4.08,5.11-4.76,8.28-1.67,2.97,2.88,5.81,5.88,8.78,8.76,1.94,1.88,2.28,3.92,1.17,6.35-1.31,2.86-2.53,5.76-3.75,8.66-.37.87-.6,1.8-1.09,3.34,5.7-2.55,9.72-5.86,11.83-11.12,2.2-5.51,5.05-10.54,9.81-14.25,3.15-2.46,6.66-3.91,10.73-3.58,3.11.25,5.43,1.81,6.82,4.6.95,1.9.64,3.75-.92,5.18-1.63,1.49-3.7,1.83-5.41.39-1.89-1.6-3.52-1.09-5.09.09-5.37,4.03-8.03,9.58-8.42,16.17-.16,2.73,1.24,3.37,3.58,1.84,3.44-2.24,5.49-5.62,7.13-9.27.59-1.31,1.02-2.7,1.68-3.97,1.27-2.45,3.62-3.42,5.83-2.52,2.25.92,3.23,3.47,2.22,6.11-1.26,3.29-2.37,6.57-1.36,11.09,1.99-1.79,4.02-2.96,5.07-4.71,2.25-3.74,4.48-7.62,5.83-11.74,3.35-10.15,6.18-20.5,11.44-29.89,1.7-3.03,3.79-5.9,6.08-8.52,2.56-2.94,5.97-4.06,9.97-3.5,5.91.83,8.92,5.24,6.77,10.84-1.14,2.97-3.03,5.68-4.74,8.41-1.09,1.75-2.45,3.32-3.73,4.95-1.21,1.55-2.45,3.06-3.81,4.75,4.71,1.71,7.32,4.9,7.03,9.65-.37,6.01-3.86,10.09-9.19,12.65-1.12.54-2.34.88-3.47,1.31,0,.32-.06.53,0,.67,2.67,5.05,2.02,5.6,7.94,2.65,5.33-2.65,9.38-6.49,11.34-12.36,1.08-3.23,2.62-6.3,4.04-9.41,1.26-2.75,3.76-3.78,6.12-2.65,2.31,1.11,3.04,3.46,1.92,6.22-1.75,4.33-3.69,8.59-5.19,13-.71,2.08-.61,4.43-.94,7.25,5.32-1.68,8.23-4.88,10.72-8.55.7-1.03,1.16-2.23,1.72-3.35,1.22-2.45,3.48-3.43,5.77-2.47,2.26.94,3.32,3.27,2.37,5.85-1.91,5.19-5.26,9.41-9.62,12.75-1.97,1.51-4.19,2.87-6.5,3.74-5.34,2-8.83.44-12.29-4.93-3.31,1.57-6.49,3.42-9.91,4.62-6.78,2.38-9.97,1.05-13.71-5.15-1.15-1.9-2.24-3.83-3.96-5.7-.4,2.13-.89,4.26-1.16,6.41-.27,2.25-.75,4.33-3.12,5.22-2.37.88-4.18-.16-5.36-1.68-2.9.68-5.61,1.96-8.18,1.73-2.52-.23-4.9-1.99-7.21-3.01-2.99,1-6.25,2.62-9.66,3.09-3.83.53-6.84-1.72-8.99-5.07-1.91,1.09-3.66,2.39-5.62,3.14-2.4.92-4.95,1.74-7.49,1.96-5.12.45-8.75-3.4-7.8-8.47.71-3.75,1.94-7.5,3.58-10.95,1.36-2.88.69-4.45-2-5.93-.63,1.46-1.37,2.87-1.85,4.36-3.67,11.29-12.24,16.94-23.07,19.72-3.52.91-7.28,1.32-10.91,1.23-6.29-.16-10.51-4.59-10.15-10.88.57-9.88,4.67-18.26,12.56-24.38,5.26-4.08,11.9-3.42,15.54,1.04,3.7,4.53,2.85,11.91-1.92,16.36-3.99,3.73-8.84,4.96-14.16,4.72-.88-.04-1.76-.15-2.61-.22ZM142.54,76.65c4.4.7,7.91-.8,8.83-3.5.25-.74.25-1.99-.2-2.42-.43-.41-1.88-.39-2.38.03-2.08,1.74-3.97,3.7-6.26,5.9ZM243.49,76.69c5.3.55,9.34-2.06,9.33-6.02-3.59-.46-7.62,2.14-9.33,6.02ZM258.64,42.11c-.41-.29-.82-.57-1.23-.86-2.36,3.55-4.71,7.09-7.07,10.64.26.18.53.36.79.55,2.5-3.44,5.01-6.88,7.51-10.32Z"/>
-    <path class="cls-1" d="M153.85,114.21c.94-.35,1.85-.85,2.82-1.03,18.63-3.48,37.43-5.67,56.36-6.56,18.12-.85,36.24-1.52,54.37-2.13,2.27-.08,4.58.57,6.82,1.1.57.14,1.23,1.11,1.3,1.76.05.45-.76,1.31-1.33,1.46-1.89.5-3.84,1.05-5.77,1.09-17.43.33-34.88.03-52.27.96-18.08.97-36.09,3.12-54.13,4.75-1.79.16-3.58.4-5.36.34-.95-.03-1.88-.61-2.82-.95,0-.27,0-.54.01-.81Z"/>
-    <path class="cls-1" d="M146.76,0c3.22.01,5.81,2.43,5.77,5.39-.04,3.38-3.24,6.44-6.67,6.4-3.35-.05-5.84-2.48-5.84-5.71,0-3.5,2.88-6.1,6.74-6.08Z"/>
-    <path class="cls-1" d="M281.76,60.86c-2.5-.02-4.46-2-4.45-4.47.02-3.43,2.63-6.8,5.3-6.83,2.35-.03,4.46,2.1,4.46,4.5,0,3.46-2.63,6.83-5.31,6.8Z"/>
-    <path class="cls-1" d="M167.28,22.07c-.06,3.28-2.02,5.25-4.29,5.25-1.99,0-3.72-1.58-3.73-3.42-.01-1.92,2.87-4.21,5.31-3.77,1.16.21,2.12,1.49,2.71,1.94Z"/>
-    <path class="cls-1" d="M117.64,21.58c-3.14-.08-4.9-2.14-4.84-4.39.07-2.25,1.54-3.19,3.43-3.45,1.69-.24,4.36,2.86,3.82,4.76-.38,1.35-1.84,2.39-2.42,3.08Z"/>
-  </g>
-  <g>
-    <g>
-      <path class="cls-1" d="M75.43,136.59v20.46h-2.67v-20.46h2.67Z"/>
-      <path class="cls-1" d="M80.25,146.33c0-1.55-.03-2.76-.12-3.98h2.37l.15,2.43h.06c.73-1.37,2.43-2.73,4.86-2.73,2.03,0,5.19,1.21,5.19,6.25v8.74h-2.67v-8.47c0-2.37-.88-4.34-3.4-4.34-1.73,0-3.1,1.24-3.58,2.73-.12.33-.18.79-.18,1.24v8.83h-2.67v-10.71Z"/>
-      <path class="cls-1" d="M109.76,135.5v17.75c0,1.31.06,2.79.12,3.79h-2.37l-.12-2.55h-.09c-.79,1.64-2.55,2.88-4.95,2.88-3.55,0-6.31-3-6.31-7.47-.03-4.89,3.04-7.86,6.59-7.86,2.28,0,3.76,1.06,4.43,2.22h.06v-8.77h2.64ZM107.12,148.33c0-.33-.03-.79-.12-1.12-.39-1.67-1.85-3.06-3.85-3.06-2.76,0-4.4,2.43-4.4,5.65,0,2.97,1.49,5.43,4.34,5.43,1.79,0,3.43-1.21,3.92-3.19.09-.36.12-.73.12-1.15v-2.55Z"/>
-      <path class="cls-1" d="M126.51,153.01c0,1.55.03,2.88.12,4.04h-2.37l-.15-2.4h-.06c-.67,1.18-2.25,2.73-4.86,2.73-2.31,0-5.07-1.31-5.07-6.43v-8.59h2.67v8.1c0,2.79.88,4.7,3.28,4.7,1.79,0,3.03-1.24,3.52-2.46.15-.36.24-.85.24-1.37v-8.98h2.67v10.65Z"/>
-      <path class="cls-1" d="M130.95,146.33c0-1.55-.06-2.76-.12-3.98h2.34l.12,2.4h.09c.82-1.4,2.19-2.7,4.64-2.7,1.97,0,3.49,1.21,4.13,2.94h.06c.46-.85,1.06-1.46,1.67-1.91.88-.67,1.82-1.03,3.22-1.03,1.97,0,4.86,1.27,4.86,6.37v8.62h-2.61v-8.29c0-2.85-1.06-4.52-3.19-4.52-1.55,0-2.7,1.12-3.19,2.4-.12.39-.21.85-.21,1.34v9.07h-2.61v-8.8c0-2.34-1.03-4.01-3.07-4.01-1.64,0-2.88,1.34-3.31,2.67-.15.36-.21.85-.21,1.31v8.83h-2.61v-10.71Z"/>
-      <path class="cls-1" d="M157.75,150.19c.06,3.61,2.34,5.1,5.04,5.1,1.91,0,3.1-.33,4.07-.76l.49,1.91c-.94.42-2.58.94-4.92.94-4.52,0-7.22-3-7.22-7.44s2.61-7.89,6.89-7.89c4.83,0,6.07,4.19,6.07,6.89,0,.55-.03.94-.09,1.24h-10.32ZM165.58,148.27c.03-1.67-.7-4.31-3.7-4.31-2.73,0-3.88,2.46-4.1,4.31h7.8Z"/>
-      <path class="cls-1" d="M171.47,146.33c0-1.55-.03-2.76-.12-3.98h2.37l.15,2.43h.06c.73-1.37,2.43-2.73,4.86-2.73,2.03,0,5.19,1.21,5.19,6.25v8.74h-2.67v-8.47c0-2.37-.88-4.34-3.4-4.34-1.73,0-3.1,1.24-3.58,2.73-.12.33-.18.79-.18,1.24v8.83h-2.67v-10.71Z"/>
-      <path class="cls-1" d="M191.41,138.83v3.52h3.82v2.03h-3.82v7.92c0,1.82.52,2.85,2,2.85.73,0,1.15-.06,1.55-.18l.12,2.03c-.52.18-1.33.36-2.37.36-1.24,0-2.25-.42-2.88-1.12-.73-.82-1.03-2.12-1.03-3.85v-8.01h-2.28v-2.03h2.28v-2.73l2.61-.79Z"/>
-      <path class="cls-1" d="M208.56,153.52c0,1.27.06,2.52.21,3.52h-2.4l-.21-1.85h-.09c-.82,1.15-2.4,2.19-4.49,2.19-2.97,0-4.49-2.09-4.49-4.22,0-3.55,3.16-5.49,8.83-5.46v-.3c0-1.18-.33-3.4-3.34-3.37-1.4,0-2.82.39-3.85,1.09l-.61-1.79c1.21-.76,3-1.27,4.86-1.27,4.49,0,5.58,3.07,5.58,5.98v5.49ZM205.98,149.55c-2.91-.06-6.22.46-6.22,3.31,0,1.76,1.15,2.55,2.49,2.55,1.94,0,3.19-1.21,3.61-2.46.09-.3.12-.61.12-.85v-2.55Z"/>
-      <path class="cls-1" d="M212.87,146.94c0-1.73-.03-3.22-.12-4.58h2.34l.12,2.91h.09c.67-1.97,2.31-3.22,4.1-3.22.27,0,.49.03.73.06v2.52c-.27-.06-.55-.06-.91-.06-1.88,0-3.22,1.4-3.58,3.4-.06.36-.09.82-.09,1.24v7.83h-2.67v-10.11Z"/>
-      <path class="cls-1" d="M225.89,138.23c0,.91-.64,1.64-1.7,1.64-.97,0-1.61-.73-1.61-1.64s.67-1.67,1.67-1.67,1.64.73,1.64,1.67ZM222.92,157.04v-14.69h2.67v14.69h-2.67Z"/>
-      <path class="cls-1" d="M240.34,153.52c0,1.27.06,2.52.21,3.52h-2.4l-.21-1.85h-.09c-.82,1.15-2.4,2.19-4.49,2.19-2.97,0-4.49-2.09-4.49-4.22,0-3.55,3.16-5.49,8.83-5.46v-.3c0-1.18-.33-3.4-3.34-3.37-1.4,0-2.82.39-3.85,1.09l-.61-1.79c1.21-.76,3-1.27,4.86-1.27,4.49,0,5.58,3.07,5.58,5.98v5.49ZM237.76,149.55c-2.91-.06-6.22.46-6.22,3.31,0,1.76,1.15,2.55,2.49,2.55,1.94,0,3.19-1.21,3.61-2.46.09-.3.12-.61.12-.85v-2.55Z"/>
-    </g>
-    <g>
-      <path class="cls-1" d="M71.44,163.83c1.61-.27,3.52-.46,5.61-.46,3.79,0,6.49.91,8.29,2.55,1.85,1.67,2.91,4.04,2.91,7.34s-1.06,6.07-2.94,7.95c-1.94,1.91-5.1,2.94-9.07,2.94-1.91,0-3.46-.09-4.8-.24v-20.09ZM74.08,181.92c.67.09,1.64.12,2.67.12,5.68,0,8.71-3.16,8.71-8.68.03-4.83-2.7-7.89-8.29-7.89-1.37,0-2.4.12-3.1.27v16.18Z"/>
-      <path class="cls-1" d="M93.17,177.13c.06,3.61,2.34,5.1,5.04,5.1,1.91,0,3.1-.33,4.07-.76l.49,1.91c-.94.42-2.58.94-4.92.94-4.52,0-7.22-3-7.22-7.44s2.61-7.89,6.89-7.89c4.83,0,6.07,4.19,6.07,6.89,0,.55-.03.94-.09,1.24h-10.32ZM101,175.22c.03-1.67-.7-4.31-3.7-4.31-2.73,0-3.88,2.46-4.1,4.31h7.8Z"/>
-      <path class="cls-1" d="M117.36,183.47c-.7.33-2.25.85-4.22.85-4.43,0-7.31-3-7.31-7.5s3.1-7.83,7.89-7.83c1.58,0,2.97.39,3.7.79l-.61,2.03c-.64-.33-1.64-.7-3.1-.7-3.37,0-5.19,2.52-5.19,5.55,0,3.4,2.19,5.49,5.1,5.49,1.52,0,2.52-.36,3.28-.7l.46,2Z"/>
-      <path class="cls-1" d="M133.6,176.52c0,5.43-3.79,7.8-7.31,7.8-3.95,0-7.04-2.91-7.04-7.56,0-4.89,3.25-7.77,7.28-7.77s7.07,3.07,7.07,7.53ZM121.98,176.67c0,3.22,1.82,5.65,4.43,5.65s4.46-2.4,4.46-5.71c0-2.49-1.24-5.61-4.4-5.61s-4.49,2.91-4.49,5.68Z"/>
-      <path class="cls-1" d="M156.31,183.99c-.58-.58-1.12-1.18-1.91-1.97-1.76,1.61-3.7,2.31-5.98,2.31-3.98,0-6.28-2.67-6.28-5.74,0-2.79,1.67-4.7,4.01-5.98v-.09c-1.06-1.34-1.7-2.85-1.7-4.28,0-2.52,1.79-5.07,5.19-5.07,2.55,0,4.52,1.67,4.52,4.34,0,2.15-1.24,3.85-4.49,5.46v.12c1.73,2,3.67,4.22,4.98,5.68.94-1.43,1.58-3.4,1.97-5.98h2.43c-.55,3.22-1.43,5.77-2.94,7.56,1.09,1.18,2.16,2.34,3.37,3.64h-3.16ZM153.09,180.47c-1.21-1.34-3.49-3.82-5.77-6.46-1.12.73-2.64,2-2.64,4.19,0,2.34,1.73,4.13,4.22,4.13,1.73,0,3.22-.79,4.19-1.85ZM146.87,167.96c0,1.49.7,2.61,1.55,3.7,2.06-1.18,3.4-2.28,3.4-4.04,0-1.24-.7-2.64-2.4-2.64s-2.55,1.4-2.55,2.97Z"/>
-      <path class="cls-1" d="M170.94,163.53v8.56h9.89v-8.56h2.67v20.46h-2.67v-9.59h-9.89v9.59h-2.67v-20.46h2.67Z"/>
-      <path class="cls-1" d="M201.29,176.52c0,5.43-3.79,7.8-7.31,7.8-3.95,0-7.04-2.91-7.04-7.56,0-4.89,3.25-7.77,7.28-7.77s7.07,3.07,7.07,7.53ZM189.67,176.67c0,3.22,1.82,5.65,4.43,5.65s4.46-2.4,4.46-5.71c0-2.49-1.24-5.61-4.4-5.61s-4.49,2.91-4.49,5.68Z"/>
-      <path class="cls-1" d="M204.66,173.27c0-1.55-.06-2.76-.12-3.98h2.34l.12,2.4h.09c.82-1.4,2.19-2.7,4.64-2.7,1.97,0,3.49,1.21,4.13,2.94h.06c.46-.85,1.06-1.46,1.67-1.91.88-.67,1.82-1.03,3.22-1.03,1.97,0,4.86,1.27,4.86,6.37v8.62h-2.61v-8.29c0-2.85-1.06-4.52-3.19-4.52-1.55,0-2.7,1.12-3.19,2.4-.12.39-.21.85-.21,1.34v9.07h-2.61v-8.8c0-2.34-1.03-4.01-3.07-4.01-1.64,0-2.88,1.34-3.31,2.67-.15.36-.21.85-.21,1.31v8.83h-2.61v-10.71Z"/>
-      <path class="cls-1" d="M231.46,177.13c.06,3.61,2.34,5.1,5.04,5.1,1.91,0,3.1-.33,4.07-.76l.49,1.91c-.94.42-2.58.94-4.92.94-4.52,0-7.22-3-7.22-7.44s2.61-7.89,6.89-7.89c4.83,0,6.07,4.19,6.07,6.89,0,.55-.03.94-.09,1.24h-10.32ZM239.29,175.22c.03-1.67-.7-4.31-3.7-4.31-2.73,0-3.88,2.46-4.1,4.31h7.8Z"/>
-    </g>
-  </g>
-</svg>
+</head>
+<body>
+
+    <!-- CAPA 1: DERIVA PERPETUA DE LUNARES VECTORIALES MERAKI EN GPU -->
+    <div class="ambient-dots-layer" aria-hidden="true"></div>
+    <div class="ambient-spotlight" aria-hidden="true"></div>
+
+    <!-- MARQUESINA TOP EDITORIAL -->
+    <div class="marquee-top-strip" aria-label="Información Destacada">
+        <div class="marquee-track">
+            <span>30% OFF + 12 CUOTAS SIN INTERÉS</span>
+            <span>•</span>
+            <span>USHUAIA 196 ESQ. JANGADERO</span>
+            <span>•</span>
+            <span>TODOS LOS MEDIOS DE PAGO</span>
+            <span>•</span>
+            <span>MODA, HOGAR Y BIENESTAR ESPIRITUAL</span>
+            <span>•</span>
+            <span>NEW IN BÁSICAS Y DIVERTIDAS</span>
+            <span>•</span>
+            <span>30% OFF + 12 CUOTAS SIN INTERÉS</span>
+            <span>•</span>
+            <span>USHUAIA 196 ESQ. JANGADERO</span>
+            <span>•</span>
+            <span>TODOS LOS MEDIOS DE PAGO</span>
+            <span>•</span>
+            <span>MODA, HOGAR Y BIENESTAR ESPIRITUAL</span>
+            <span>•</span>
+            <span>NEW IN BÁSICAS Y DIVERTIDAS</span>
+            <span>•</span>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR CENTRAL MAESTRO -->
+    <main class="master-hub-shell">
+
+        <!-- 1. CABECERA: LOGO VECTORIAL OFICIAL DE AUTOR CON MÁXIMA JERARQUÍA -->
+        <header class="brand-monument-header">
+            
+            <div class="brand-logo-frame" onclick="playHaptic()" aria-label="MeraKi Indumentaria Deco & Home">
+                <!-- SVG LOGO OFICIAL ORIGINAL VECTORIAL LIMPIO -->
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.51 184.32" class="meraki-svg-logo">
+                    <g fill="#600000">
+                        <path d="M68.89,41.68c3.92-6.23,7.47-12.27,11.42-18.03,2.12-3.08,4.87-5.75,7.45-8.49.97-1.03,2.2-1.86,3.43-2.6,7.05-4.27,12.28-2.01,13.75,6.11,1.52,8.36.37,16.7-1.06,24.94-1.56,9.02-3.54,17.96-5.46,27.5.65-1.17,1.06-1.94,1.49-2.7,8.53-14.99,16.98-30.03,25.67-44.93,1.83-3.15,4.47-5.84,6.85-8.65,1.84-2.17,4.04-2.85,6.64-1.09,1.93,1.3,4.07,2.32,5.91,3.73,5.32,4.07,6.78,9.17,3.89,15.25-1.68,3.53-4.02,6.8-6.4,9.93-9.87,12.9-16.26,27.29-18.52,43.39-.51,3.6-.48,7.4.06,11,1.38,9.26,7.24,13.56,16.53,12.63,3.88-.39,4.71.16,5.94,3.95,1.98,6.11-1.98,13.3-8.32,15.12-13.77,3.95-23.59-2.84-25.36-17.52-1.55-12.81,1.2-25.06,5.06-37.11,4.03-12.57,9.83-24.3,17.1-35.32,1.06-1.61,1.88-3.5,2.26-5.37.2-.97-.55-2.55-1.38-3.16-.65-.47-2.45-.26-3.12.34-2.98,2.69-6.1,5.36-8.52,8.53-10.11,13.29-17.33,28.33-25.7,42.69-7.32,12.57-10.11,26.18-12.13,40.19-.08.53-.18,1.06-.28,1.59-1.24,6.53-5.89,9.3-12.32,7.36-3.41-1.03-4.8-3.15-3.72-6.52,2.91-9.07,6.13-18.03,9.01-27.11,5.29-16.69,10.53-33.4,15.54-50.18,1.06-3.56,1.28-7.44,1.4-11.19.13-4.24-3.21-6.8-7.21-5.28-2.55.97-5.02,2.86-6.83,4.95-5.31,6.13-8.49,13.53-11.31,21.02-8.81,23.38-14.88,47.47-18.28,72.23-.25,1.84-1.11,3.21-2.92,3.36-2.27.19-4.67.3-6.85-.24-3.01-.75-4.2-2.71-3.47-5.72,2.16-8.9,4.2-17.85,6.96-26.57,3.25-10.27,7.21-20.31,10.87-30.45,2.83-7.85,4.62-15.88,4.06-24.28-.59-8.83-5.21-14.3-13.93-15.13-15.34-1.46-28.61,3.13-38.67,15.28-2.66,3.21-4.64,6.9-4.51,11.28.15,5.19,2.85,8.15,8.05,8.15,3.64,0,7.32-.65,10.92-1.31,2.64-.48,5.19-1.43,7.77-2.21,4.37-1.31,6.41.15,6.65,4.8.33,6.29-2.39,10.21-8.64,12.47-4.78,1.73-10.17,2.36-15.3,2.36-5.65,0-9.32-3.8-11.39-8.94-2.66-6.6-2.41-13.42-.88-20.17,3.41-15.06,10.5-27.87,24.47-35.49,14.66-7.99,29.32-5.5,38.14,10.04,2.34,4.12,3.26,9.06,4.8,13.63.19.56.21,1.18.34,1.94Z"/>
+                        <path d="M139.62,85.82c-1.15,3.94-.56,4.84,3.22,4.61,6.24-.38,12.06-2.25,16.98-6.13,1.89-1.49,3.5-3.65,4.58-5.82,2.19-4.42,3.89-9.08,5.86-13.61,1.77-4.08,5.11-4.76,8.28-1.67,2.97,2.88,5.81,5.88,8.78,8.76,1.94,1.88,2.28,3.92,1.17,6.35-1.31,2.86-2.53,5.76-3.75,8.66-.37.87-.6,1.8-1.09,3.34,5.7-2.55,9.72-5.86,11.83-11.12,2.2-5.51,5.05-10.54,9.81-14.25,3.15-2.46,6.66-3.91,10.73-3.58,3.11.25,5.43,1.81,6.82,4.6.95,1.9.64,3.75-.92,5.18-1.63,1.49-3.7,1.83-5.41.39-1.89-1.6-3.52-1.09-5.09.09-5.37,4.03-8.03,9.58-8.42,16.17-.16,2.73,1.24,3.37,3.58,1.84,3.44-2.24,5.49-5.62,7.13-9.27.59-1.31,1.02-2.7,1.68-3.97,1.27-2.45,3.62-3.42,5.83-2.52,2.25.92,3.23,3.47,2.22,6.11-1.26,3.29-2.37,6.57-1.36,11.09,1.99-1.79,4.02-2.96,5.07-4.71,2.25-3.74,4.48-7.62,5.83-11.74,3.35-10.15,6.18-20.5,11.44-29.89,1.7-3.03,3.79-5.9,6.08-8.52,2.56-2.94,5.97-4.06,9.97-3.5,5.91.83,8.92,5.24,6.77,10.84-1.14,2.97-3.03,5.68-4.74,8.41-1.09,1.75-2.45,3.32-3.73,4.95-1.21,1.55-2.45,3.06-3.81,4.75,4.71,1.71,7.32,4.9,7.03,9.65-.37,6.01-3.86,10.09-9.19,12.65-1.12.54-2.34.88-3.47,1.31,0,.32-.06.53,0,.67,2.67,5.05,2.02,5.6,7.94,2.65,5.33-2.65,9.38-6.49,11.34-12.36,1.08-3.23,2.62-6.3,4.04-9.41,1.26-2.75,3.76-3.78,6.12-2.65,2.31,1.11,3.04,3.46,1.92,6.22-1.75,4.33-3.69,8.59-5.19,13-.71,2.08-.61,4.43-.94,7.25,5.32-1.68,8.23-4.88,10.72-8.55.7-1.03,1.16-2.23,1.72-3.35,1.22-2.45,3.48-3.43,5.77-2.47,2.26.94,3.32,3.27,2.37,5.85-1.91,5.19-5.26,9.41-9.62,12.75-1.97,1.51-4.19,2.87-6.5,3.74-5.34,2-8.83.44-12.29-4.93-3.31,1.57-6.49,3.42-9.91,4.62-6.78,2.38-9.97,1.05-13.71-5.15-1.15-1.9-2.24-3.83-3.96-5.7-.4,2.13-.89,4.26-1.16,6.41-.27,2.25-.75,4.33-3.12,5.22-2.37.88-4.18-.16-5.36-1.68-2.9.68-5.61,1.96-8.18,1.73-2.52-.23-4.9-1.99-7.21-3.01-2.99,1-6.25,2.62-9.66,3.09-3.83.53-6.84-1.72-8.99-5.07-1.91,1.09-3.66,2.39-5.62,3.14-2.4.92-4.95,1.74-7.49,1.96-5.12.45-8.75-3.4-7.8-8.47.71-3.75,1.94-7.5,3.58-10.95,1.36-2.88.69-4.45-2-5.93-.63,1.46-1.37,2.87-1.85,4.36-3.67,11.29-12.24,16.94-23.07,19.72-3.52.91-7.28,1.32-10.91,1.23-6.29-.16-10.51-4.59-10.15-10.88.57-9.88,4.67-18.26,12.56-24.38,5.26-4.08,11.9-3.42,15.54,1.04,3.7,4.53,2.85,11.91-1.92,16.36-3.99,3.73-8.84,4.96-14.16,4.72-.88-.04-1.76-.15-2.61-.22ZM142.54,76.65c4.4.7,7.91-.8,8.83-3.5.25-.74.25-1.99-.2-2.42-.43-.41-1.88-.39-2.38.03-2.08,1.74-3.97,3.7-6.26,5.9ZM243.49,76.69c5.3.55,9.34-2.06,9.33-6.02-3.59-.46-7.62,2.14-9.33,6.02ZM258.64,42.11c-.41-.29-.82-.57-1.23-.86-2.36,3.55-4.71,7.09-7.07,10.64.26.18.53.36.79.55,2.5-3.44,5.01-6.88,7.51-10.32Z"/>
+                        <path d="M153.85,114.21c.94-.35,1.85-.85,2.82-1.03,18.63-3.48,37.43-5.67,56.36-6.56,18.12-.85,36.24-1.52,54.37-2.13,2.27-.08,4.58.57,6.82,1.1.57.14,1.23,1.11,1.3,1.76.05.45-.76,1.31-1.33,1.46-1.89.5-3.84,1.05-5.77,1.09-17.43.33-34.88.03-52.27.96-18.08.97-36.09,3.12-54.13,4.75-1.79.16-3.58.4-5.36.34-.95-.03-1.88-.61-2.82-.95,0-.27,0-.54.01-.81Z"/>
+                        <path d="M146.76,0c3.22.01,5.81,2.43,5.77,5.39-.04,3.38-3.24,6.44-6.67,6.4-3.35-.05-5.84-2.48-5.84-5.71,0-3.5,2.88-6.1,6.74-6.08Z"/>
+                        <path d="M281.76,60.86c-2.5-.02-4.46-2-4.45-4.47.02-3.43,2.63-6.8,5.3-6.83,2.35-.03,4.46,2.1,4.46,4.5,0,3.46-2.63,6.83-5.31,6.8Z"/>
+                        <path d="M167.28,22.07c-.06,3.28-2.02,5.25-4.29,5.25-1.99,0-3.72-1.58-3.73-3.42-.01-1.92,2.87-4.21,5.31-3.77,1.16.21,2.12,1.49,2.71,1.94Z"/>
+                        <path d="M117.64,21.58c-3.14-.08-4.9-2.14-4.84-4.39.07-2.25,1.54-3.19,3.43-3.45,1.69-.24,4.36,2.86,3.82,4.76-.38,1.35-1.84,2.39-2.42,3.08Z"/>
+                        <path d="M75.43,136.59v20.46h-2.67v-20.46h2.67ZM80.25,146.33c0-1.55-.03-2.76-.12-3.98h2.37l.15,2.43h.06c.73-1.37,2.43-2.73,4.86-2.73,2.03,0,5.19,1.21,5.19,6.25v8.74h-2.67v-8.47c0-2.37-.88-4.34-3.4-4.34-1.73,0-3.1,1.24-3.58,2.73-.12.33-.18.79-.18,1.24v8.83h-2.67v-10.71ZM109.76,135.5v17.75c0,1.31.06,2.79.12,3.79h-2.37l-.12-2.55h-.09c-.79,1.64-2.55,2.88-4.95,2.88-3.55,0-6.31-3-6.31-7.47-.03-4.89,3.04-7.86,6.59-7.86,2.28,0,3.76,1.06,4.43,2.22h.06v-8.77h2.64ZM107.12,148.33c0-.33-.03-.79-.12-1.12-.39-1.67-1.85-3.06-3.85-3.06-2.76,0-4.4,2.43-4.4,5.65,0,2.97,1.49,5.43,4.34,5.43,1.79,0,3.43-1.21,3.92-3.19.09-.36.12-.73.12-1.15v-2.55ZM126.51,153.01c0,1.55.03,2.88.12,4.04h-2.37l-.15-2.4h-.06c-.67,1.18-2.25,2.73-4.86,2.73-2.31,0-5.07-1.31-5.07-6.43v-8.59h2.67v8.1c0,2.79.88,4.7,3.28,4.7,1.79,0,3.03-1.24,3.52-2.46.15-.36.24-.85.24-1.37v-8.98h2.67v10.65ZM130.95,146.33c0-1.55-.06-2.76-.12-3.98h2.34l.12,2.4h.09c.82-1.4,2.19-2.7,4.64-2.7,1.97,0,3.49,1.21,4.13,2.94h.06c.46-.85,1.06-1.46,1.67-1.91.88-.67,1.82-1.03,3.22-1.03,1.97,0,4.86,1.27,4.86,6.37v8.62h-2.61v-8.29c0-2.85-1.06-4.52-3.19-4.52-1.55,0-2.7,1.12-3.19,2.4-.12.39-.21.85-.21,1.34v9.07h-2.61v-8.8c0-2.34-1.03-4.01-3.07-4.01-1.64,0-2.88,1.34-3.31,2.67-.15.36-.21.85-.21,1.31v8.83h-2.61v-10.71ZM157.75,150.19c.06,3.61,2.34,5.1,5.04,5.1,1.91,0,3.1-.33,4.07-.76l.49,1.91c-.94.42-2.58.94-4.92.94-4.52,0-7.22-3-7.22-7.44s2.61-7.89,6.89-7.89c4.83,0,6.07,4.19,6.07,6.89,0,.55-.03.94-.09,1.24h-10.32ZM165.58,148.27c.03-1.67-.7-4.31-3.7-4.31-2.73,0-3.88,2.46-4.1,4.31h7.8ZM171.47,146.33c0-1.55-.03-2.76-.12-3.98h2.37l.15,2.43h.06c.73-1.37,2.43-2.73,4.86-2.73,2.03,0,5.19,1.21,5.19,6.25v8.74h-2.67v-8.47c0-2.37-.88-4.34-3.4-4.34-1.73,0-3.1,1.24-3.58,2.73-.12.33-.18.79-.18,1.24v8.83h-2.67v-10.71ZM191.41,138.83v3.52h3.82v2.03h-3.82v7.92c0,1.82.52,2.85,2,2.85.73,0,1.15-.06,1.55-.18l.12,2.03c-.52.18-1.33.36-2.37.36-1.24,0-2.25-.42-2.88-1.12-.73-.82-1.03-2.12-1.03-3.85v-8.01h-2.28v-2.03h2.28v-2.73l2.61-.79ZM208.56,153.52c0,1.27.06,2.52.21,3.52h-2.4l-.21-1.85h-.09c-.82,1.15-2.4,2.19-4.49,2.19-2.97,0-4.49-2.09-4.49-4.22,0-3.55,3.16-5.49,8.83-5.46v-.3c0-1.18-.33-3.4-3.34-3.37-1.4,0-2.82.39-3.85,1.09l-.61-1.79c1.21-.76,3-1.27,4.86-1.27,4.49,0,5.58,3.07,5.58,5.98v5.49ZM205.98,149.55c-2.91-.06-6.22.46-6.22,3.31,0,1.76,1.15,2.55,2.49,2.55,1.94,0,3.19-1.21,3.61-2.46.09-.3.12-.61.12-.85v-2.55ZM212.87,146.94c0-1.73-.03-3.22-.12-4.58h2.34l.12,2.91h.09c.67-1.97,2.31-3.22,4.1-3.22.27,0,.49.03.73.06v2.52c-.27-.06-.55-.06-.91-.06-1.88,0-3.22,1.4-3.58,3.4-.06.36-.09.82-.09,1.24v7.83h-2.67v-10.11ZM225.89,138.23c0,.91-.64,1.64-1.7,1.64-.97,0-1.61-.73-1.61-1.64s.67-1.67,1.67-1.67,1.64.73,1.64,1.67ZM222.92,157.04v-14.69h2.67v14.69h-2.67ZM240.34,153.52c0,1.27.06,2.52.21,3.52h-2.4l-.21-1.85h-.09c-.82,1.15-2.4,2.19-4.49,2.19-2.97,0-4.49-2.09-4.49-4.22,0-3.55,3.16-5.49,8.83-5.46v-.3c0-1.18-.33-3.4-3.34-3.37-1.4,0-2.82.39-3.85,1.09l-.61-1.79c1.21-.76,3-1.27,4.86-1.27,4.49,0,5.58,3.07,5.58,5.98v5.49ZM237.76,149.55c-2.91-.06-6.22.46-6.22,3.31,0,1.76,1.15,2.55,2.49,2.55,1.94,0,3.19-1.21,3.61-2.46.09-.3.12-.61.12-.85v-2.55Z"/>
+                        <path d="M71.44,163.83c1.61-.27,3.52-.46,5.61-.46,3.79,0,6.49.91,8.29,2.55,1.85,1.67,2.91,4.04,2.91,7.34s-1.06,6.07-2.94,7.95c-1.94,1.91-5.1,2.94-9.07,2.94-1.91,0-3.46-.09-4.8-.24v-20.09ZM74.08,181.92c.67.09,1.64.12,2.67.12,5.68,0,8.71-3.16,8.71-8.68.03-4.83-2.7-7.89-8.29-7.89-1.37,0-2.4.12-3.1.27v16.18ZM93.17,177.13c.06,3.61,2.34,5.1,5.04,5.1,1.91,0,3.1-.33,4.07-.76l.49,1.91c-.94.42-2.58.94-4.92.94-4.52,0-7.22-3-7.22-7.44s2.61-7.89,6.89-7.89c4.83,0,6.07,4.19,6.07,6.89,0,.55-.03.94-.09,1.24h-10.32ZM101,175.22c.03-1.67-.7-4.31-3.7-4.31-2.73,0-3.88,2.46-4.1,4.31h7.8ZM117.36,183.47c-.7.33-2.25.85-4.22.85-4.43,0-7.31-3-7.31-7.5s3.1-7.83,7.89-7.83c1.58,0,2.97.39,3.7.79l-.61,2.03c-.64-.33-1.64-.7-3.1-.7-3.37,0-5.19,2.52-5.19,5.55,0,3.4,2.19,5.49,5.1,5.49,1.52,0,2.52-.36,3.28-.7l.46,2ZM133.6,176.52c0,5.43-3.79,7.8-7.31,7.8-3.95,0-7.04-2.91-7.04-7.56,0-4.89,3.25-7.77,7.28-7.77s7.07,3.07,7.07,7.53ZM121.98,176.67c0,3.22,1.82,5.65,4.43,5.65s4.46-2.4,4.46-5.71c0-2.49-1.24-5.61-4.4-5.61s-4.49,2.91-4.49,5.68ZM156.31,183.99c-.58-.58-1.12-1.18-1.91-1.97-1.76,1.61-3.7,2.31-5.98,2.31-3.98,0-6.28-2.67-6.28-5.74,0-2.79,1.67-4.7,4.01-5.98v-.09c-1.06-1.34-1.7-2.85-1.7-4.28,0-2.52,1.79-5.07,5.19-5.07,2.55,0,4.52,1.67,4.52,4.34,0,2.15-1.24,3.85-4.49,5.46v.12c1.73,2,3.67,4.22,4.98,5.68.94-1.43,1.58-3.4,1.97-5.98h2.43c-.55,3.22-1.43,5.77-2.94,7.56,1.09,1.18,2.16,2.34,3.37,3.64h-3.16ZM153.09,180.47c-1.21-1.34-3.49-3.82-5.77-6.46-1.12.73-2.64,2-2.64,4.19,0,2.34,1.73,4.13,4.22,4.13,1.73,0,3.22-.79,4.19-1.85ZM146.87,167.96c0,1.49.7,2.61,1.55,3.7,2.06-1.18,3.4-2.28,3.4-4.04,0-1.24-.7-2.64-2.4-2.64s-2.55,1.4-2.55,2.97ZM170.94,163.53v8.56h9.89v-8.56h2.67v20.46h-2.67v-9.59h-9.89v9.59h-2.67v-20.46h2.67ZM201.29,176.52c0,5.43-3.79,7.8-7.31,7.8-3.95,0-7.04-2.91-7.04-7.56,0-4.89,3.25-7.77,7.28-7.77s7.07,3.07,7.07,7.53ZM189.67,176.67c0,3.22,1.82,5.65,4.43,5.65s4.46-2.4,4.46-5.71c0-2.49-1.24-5.61-4.4-5.61s-4.49,2.91-4.49,5.68ZM204.66,173.27c0-1.55-.06-2.76-.12-3.98h2.34l.12,2.4h.09c.82-1.4,2.19-2.7,4.64-2.7,1.97,0,3.49,1.21,4.13,2.94h.06c.46-.85,1.06-1.46,1.67-1.91.88-.67,1.82-1.03,3.22-1.03,1.97,0,4.86,1.27,4.86,6.37v8.62h-2.61v-8.29c0-2.85-1.06-4.52-3.19-4.52-1.55,0-2.7,1.12-3.19,2.4-.12.39-.21.85-.21,1.34v9.07h-2.61v-8.8c0-2.34-1.03-4.01-3.07-4.01-1.64,0-2.88,1.34-3.31,2.67-.15.36-.21.85-.21,1.31v8.83h-2.61v-10.71ZM231.46,177.13c.06,3.61,2.34,5.1,5.04,5.1,1.91,0,3.1-.33,4.07-.76l.49,1.91c-.94.42-2.58.94-4.92.94-4.52,0-7.22-3-7.22-7.44s2.61-7.89,6.89-7.89c4.83,0,6.07,4.19,6.07,6.89,0,.55-.03.94-.09,1.24h-10.32ZM239.29,175.22c.03-1.67-.7-4.31-3.7-4.31-2.73,0-3.88,2.46-4.1,4.31h7.8Z"/>
+                    </g>
+                </svg>
+
+                <!-- REFLEJO EN ESPEJO -->
+                <svg viewBox="0 0 295.51 184.32" xmlns="http://www.w3.org/2000/svg" class="meraki-svg-reflection" aria-hidden="true">
+                    <g fill="#600000">
+                        <path d="M68.89,41.68c3.92-6.23,7.47-12.27,11.42-18.03,2.12-3.08,4.87-5.75,7.45-8.49.97-1.03,2.2-1.86,3.43-2.6,7.05-4.27,12.28-2.01,13.75,6.11,1.52,8.36.37,16.7-1.06,24.94-1.56,9.02-3.54,17.96-5.46,27.5.65-1.17,1.06-1.94,1.49-2.7,8.53-14.99,16.98-30.03,25.67-44.93,1.83-3.15,4.47-5.84,6.85-8.65,1.84-2.17,4.04-2.85,6.64-1.09,1.93,1.3,4.07,2.32,5.91,3.73,5.32,4.07,6.78,9.17,3.89,15.25-1.68,3.53-4.02,6.8-6.4,9.93-9.87,12.9-16.26,27.29-18.52,43.39-.51,3.6-.48,7.4.06,11,1.38,9.26,7.24,13.56,16.53,12.63,3.88-.39,4.71.16,5.94,3.95,1.98,6.11-1.98,13.3-8.32,15.12-13.77,3.95-23.59-2.84-25.36-17.52-1.55-12.81,1.2-25.06,5.06-37.11,4.03-12.57,9.83-24.3,17.1-35.32,1.06-1.61,1.88-3.5,2.26-5.37.2-.97-.55-2.55-1.38-3.16-.65-.47-2.45-.26-3.12.34-2.98,2.69-6.1,5.36-8.52,8.53-10.11,13.29-17.33,28.33-25.7,42.69-7.32,12.57-10.11,26.18-12.13,40.19-.08.53-.18,1.06-.28,1.59-1.24,6.53-5.89,9.3-12.32,7.36-3.41-1.03-4.8-3.15-3.72-6.52,2.91-9.07,6.13-18.03,9.01-27.11,5.29-16.69,10.53-33.4,15.54-50.18,1.06-3.56,1.28-7.44,1.4-11.19.13-4.24-3.21-6.8-7.21-5.28-2.55.97-5.02,2.86-6.83,4.95-5.31,6.13-8.49,13.53-11.31,21.02-8.81,23.38-14.88,47.47-18.28,72.23-.25,1.84-1.11,3.21-2.92,3.36-2.27.19-4.67.3-6.85-.24-3.01-.75-4.2-2.71-3.47-5.72,2.16-8.9,4.2-17.85,6.96-26.57,3.25-10.27,7.21-20.31,10.87-30.45,2.83-7.85,4.62-15.88,4.06-24.28-.59-8.83-5.21-14.3-13.93-15.13-15.34-1.46-28.61,3.13-38.67,15.28-2.66,3.21-4.64,6.9-4.51,11.28.15,5.19,2.85,8.15,8.05,8.15,3.64,0,7.32-.65,10.92-1.31,2.64-.48,5.19-1.43,7.77-2.21,4.37-1.31,6.41.15,6.65,4.8.33,6.29-2.39,10.21-8.64,12.47-4.78,1.73-10.17,2.36-15.3,2.36-5.65,0-9.32-3.8-11.39-8.94-2.66-6.6-2.41-13.42-.88-20.17,3.41-15.06,10.5-27.87,24.47-35.49,14.66-7.99,29.32-5.5,38.14,10.04,2.34,4.12,3.26,9.06,4.8,13.63.19.56.21,1.18.34,1.94Z"/>
+                    </g>
+                </svg>
+            </div>
+
+            <h1 class="brand-motto-headline">Moda, hogar y bienestar espiritual</h1>
+
+            <div class="brand-manifesto-box">
+                <p>
+                    Prendas con diseño y actitud, objetos para transformar tu casa en un refugio y rituales de aromas que elevan la energía de cada día.
+                </p>
+            </div>
+
+            <div class="store-live-status-pill" id="storeLiveBadge">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Comprobando horario en Ushuaia 196...</span>
+            </div>
+        </header>
+
+        <!-- 2. HERO CALL TO ACTION: WHATSAPP DIRECTO AL LOCAL -->
+        <a href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Vi%20sus%20novedades%20en%20el%20sitio%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-hero" onclick="playHaptic()">
+            <div class="hero-wa-info">
+                <span class="hero-wa-badge">Atención Personalizada · Puerto Iguazú</span>
+                <h2 class="hero-wa-title">Consultar por WhatsApp</h2>
+                <span class="hero-wa-sub">3757-525802 · Todos los medios de pago · 12 cuotas</span>
+            </div>
+            <div class="hero-wa-bubble">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </div>
+        </a>
+
+        <!-- 3. VIDEO REEL "SMART VIEWPORT" (ZERO-LAG INTERSECTIONOBSERVER) -->
+        <article class="video-reel-stage">
+            <video class="smart-reel-video" playsinline muted loop preload="none">
+                <source src="moda.mp4" type="video/mp4">
+            </video>
+            <div class="video-reel-overlay">
+                <span class="reel-badge-tag">New In · Video Reel</span>
+                <h3 class="reel-title">Básicas & Divertidas</h3>
+                <p class="reel-sub">Prendas versátiles para combinar en tu outfit del día a día.</p>
+            </div>
+        </article>
+
+        <!-- 4. GRILLA BENTO DE COLECCIONES (ELLAS, HOGAR, AROMAS, ELLOS) -->
+        <section class="morph-bento-grid">
+
+            <!-- ELLAS -->
+            <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20consultar%20por%20indumentaria%20femenina%20y%20conjuntos." target="_blank" rel="noopener noreferrer" class="bento-cell cell-ellas" onclick="playHaptic()">
+                <div class="cell-top-bar">
+                    <span class="cell-tag">01 · ELLAS</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Elegante de Paseo</h3>
+                    <p class="cell-desc">Sastrería liviana, lino, tops bordados y conjuntos de temporada.</p>
+                </div>
+            </a>
+
+            <!-- HOGAR -->
+            <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Deseo%20info%20sobre%20muebles%20y%20deco%20para%20el%20hogar." target="_blank" rel="noopener noreferrer" class="bento-cell cell-hogar" onclick="playHaptic()">
+                <div class="cell-top-bar">
+                    <span class="cell-tag">02 · HOGAR</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Organizá tu Hogar</h3>
+                    <p class="cell-desc">Mesas de noche en pino, almohadones Amore y detalles cálidos.</p>
+                </div>
+            </a>
+
+            <!-- LUZ & AROMA -->
+            <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20saber%20sobre%20los%20aromatizantes%20y%20sahumerios." target="_blank" rel="noopener noreferrer" class="bento-cell cell-aroma" onclick="playHaptic()">
+                <div class="cell-top-bar">
+                    <span class="cell-tag" style="color:#214E53;">03 · LUZ & AROMA</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Aromatización Textil</h3>
+                    <p class="cell-desc">Durazno Melón, Vainilla, Lavanda y bombas de defumación.</p>
+                </div>
+            </a>
+
+            <!-- ELLOS -->
+            <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quisiera%20consultar%20por%20la%20l%C3%ADnea%20masculina%20y%20fragancias." target="_blank" rel="noopener noreferrer" class="bento-cell cell-ellos" onclick="playHaptic()">
+                <div class="cell-top-bar">
+                    <span class="cell-tag" style="color:#555;">04 · ELLOS</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Para Ellos</h3>
+                    <p class="cell-desc">Remeras básicas Taverniti, bermudas y perfumería masculina.</p>
+                </div>
+            </a>
+
+            <!-- BANNER ESPECIAL MAMÁ / REGALOS -->
+            <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20armar%20una%20bolsa%20de%20regalo%20MeraKi." target="_blank" rel="noopener noreferrer" class="bento-cell cell-full-span" onclick="playHaptic()">
+                <div style="flex:1; min-width: 0;">
+                    <div class="cell-top-bar" style="margin-bottom: 2px;">
+                        <span class="cell-tag">¿QUÉ HAY EN MI BOLSA?</span>
+                    </div>
+                    <h3 class="cell-title" style="font-size: 1.35rem;">Edición Regalos MeraKi</h3>
+                    <p class="cell-desc">Armamos sets personalizados de deco, sahumado y prendas para regalar.</p>
+                </div>
+                <span class="cell-arrow" style="font-size: 1.35rem; color: var(--meraki-vino); margin-left: 8px;">↗</span>
+            </a>
+
+        </section>
+
+        <!-- 5. POD BIENESTAR: 7 DÍAS / 7 INTENCIONES (CON PATRÓN DE ONDAS EN FILIGRANA) -->
+        <article class="pod-intenciones-bienestar">
+            <div class="pod-intenciones-header">
+                <span class="pod-intenciones-title">✨ 7 Días · 7 Intenciones</span>
+                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #98C7CD; text-transform: uppercase; font-weight: 800;">Sahumado</span>
+            </div>
+
+            <p style="font-size: 0.8rem; color: #D8EEEE; line-height: 1.4;">
+                Cada día de la semana tiene su propia energía y merece una intención diferente. Elegí la tuya para sahumar tu hogar:
+            </p>
+
+            <div class="intenciones-tabs-row">
+                <button class="intencion-btn active" onclick="selectIntencion('abundancia', this)">Abundancia</button>
+                <button class="intencion-btn" onclick="selectIntencion('paz', this)">Paz & Armonía</button>
+                <button class="intencion-btn" onclick="selectIntencion('meditacion', this)">Meditación</button>
+                <button class="intencion-btn" onclick="selectIntencion('soltar', this)">Soltar</button>
+            </div>
+
+            <div class="intencion-display-box" id="intencionBox">
+                <span id="intencionTitle" style="font-family: var(--font-mono); font-size: 0.72rem; color: #98C7CD; text-transform: uppercase; font-weight: 800;">Momento de Abundancia</span>
+                <p class="intencion-phrase" id="intencionPhrase">"Atraigo prosperidad, plenitud y gratitud a cada rincón de mi espacio."</p>
+                <a id="intencionLink" href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quiero%20el%20kit%20de%20sahumado%20para%20la%20intenci%C3%B3n%20de%20Abundancia." target="_blank" rel="noopener noreferrer" class="intencion-cta">Pedir kit de sahumado ↗</a>
+            </div>
+        </article>
+
+        <!-- 6. SHOWCASE LOOK & LIVING (SNAP SCROLL CON WEBP LOCALES) -->
+        <section class="showcase-block">
+            <div class="showcase-header">
+                <div>
+                    <h3 class="showcase-title-serif">Nuevas Joyitas en Stock</h3>
+                    <span style="font-size: 0.74rem; color: var(--color-text-muted); font-weight: 600;">Elegidos para renovar tu armario y tu hogar</span>
+                </div>
+                <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20conocer%20todos%20los%20ingresos%20disponibles." target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: 0.70rem; font-weight: 800; color: var(--meraki-vino); text-decoration: none;">Ver todo →</a>
+            </div>
+
+            <div class="showcase-track-scroll">
+                
+                <!-- 1. AROMATIZANTES TEXTILES (aromatizantes.webp) -->
+                <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20consultar%20por%20los%20Aromatizantes%20Textiles%20MeraKi." target="_blank" rel="noopener noreferrer" class="product-meraki-card" onclick="playHaptic()">
+                    <div class="product-thumb-container">
+                        <span class="product-tag-badge">Luz & Aroma</span>
+                        <img src="aromatizantes.webp" alt="Aromatizantes Textiles MeraKi" loading="lazy" decoding="async">
+                    </div>
+                    <div class="product-info-stack">
+                        <h4 class="product-title">Aromatizantes Textiles</h4>
+                        <span class="product-sub-note">Durazno Melón · Vainilla · Lavanda</span>
+                    </div>
+                </a>
+
+                <!-- 2. SOFÁ & ALMOHADONES AMORE (sofa.webp) -->
+                <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20consultar%20por%20los%20almohadones%20Amore%20y%20sillones." target="_blank" rel="noopener noreferrer" class="product-meraki-card" onclick="playHaptic()">
+                    <div class="product-thumb-container">
+                        <span class="product-tag-badge">Hogar</span>
+                        <img src="sofa.webp" alt="Almohadones Amore MeraKi" loading="lazy" decoding="async">
+                    </div>
+                    <div class="product-info-stack">
+                        <h4 class="product-title">Almohadones "Amore"</h4>
+                        <span class="product-sub-note">Textiles premium para tu próximo sofá</span>
+                    </div>
+                </a>
+
+                <!-- 3. MESAS Y ORGANIZACIÓN DECO (deco.webp) -->
+                <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quisiera%20reservar%20las%20mesitas%20de%20noche%20en%20pino." target="_blank" rel="noopener noreferrer" class="product-meraki-card" onclick="playHaptic()">
+                    <div class="product-thumb-container">
+                        <span class="product-tag-badge">Deco</span>
+                        <img src="deco.webp" alt="Mesitas de noche en pino MeraKi" loading="lazy" decoding="async">
+                    </div>
+                    <div class="product-info-stack">
+                        <h4 class="product-title">Mesitas Auxiliares</h4>
+                        <span class="product-sub-note">Madera de pino con cajón rústico</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 7. TIENDA FÍSICA: USHUAIA 196 ESQ. JANGADERO (PUERTO IGUAZÚ) -->
+        <article class="store-location-card">
+            <div class="store-location-header">
+                <div class="store-title-wrap">
+                    <div class="store-pin-bubble">📍</div>
+                    <div>
+                        <h3 class="store-name-title">Vení a visitarnos</h3>
+                        <span class="store-address-text">Ushuaia 196 esq. Jangadero · Puerto Iguazú, Misiones</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="store-map-frame">
+                <!-- MAPA GOOGLE EMBEBIDO CENTRADO EN USHUAIA Y JANGADERO, PUERTO IGUAZÚ -->
+                <iframe 
+                    title="Ubicación MeraKi en Puerto Iguazú"
+                    src="https://maps.google.com/maps?q=Ushuaia+y+Jangadero,+Puerto+Iguaz%C3%BA,+Misiones,+Argentina&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                    loading="lazy" 
+                    allowfullscreen="" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <a href="https://maps.google.com/?q=Ushuaia+196,+Puerto+Iguazu,+Misiones" target="_blank" rel="noopener noreferrer" class="btn-directions-link" onclick="playHaptic()">
+                <span>Horarios: Lun a Vier 9:00 a 12:30 | 16:30 a 21:00</span>
+                <span>Abrir GPS ↗</span>
+            </a>
+        </article>
+
+        <!-- 8. REDES OFICIALES -->
+        <nav class="social-network-bar" aria-label="Canales de Contacto Directo">
+            <a href="https://www.instagram.com/merakicvm/" target="_blank" rel="noopener noreferrer" class="social-round-btn" aria-label="Instagram Oficial MeraKi" onclick="playHaptic()">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/5493757525802" target="_blank" rel="noopener noreferrer" class="social-round-btn" aria-label="WhatsApp Oficial" onclick="playHaptic()">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="tel:5493757525802" class="social-round-btn" aria-label="Llamar" onclick="playHaptic()">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+        </nav>
+
+        <!-- 9. COLOPHON FOOTER -->
+        <footer class="hub-colophon">
+            <div class="colophon-signature">MeraKi</div>
+            <p class="colophon-text">
+                Indumentaria femenina, deco hogar y bienestar espiritual.<br>
+                Ushuaia 196 esq. Jangadero · Puerto Iguazú, Misiones, Argentina.
+            </p>
+            <p class="colophon-copy">© 2026 MERAKI INDUMENTARIA DECO & HOME</p>
+        </footer>
+
+    </main>
+
+    <!-- 10. BOTÓN FLOTANTE WHATSAPP CONCIERGE -->
+    <a href="https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quisiera%20hacer%20una%20consulta." class="floating-concierge-wrap" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Asistente" onclick="playHaptic()">
+        <span class="floating-pill-label">¡Consultanos!</span>
+        <div class="floating-circle-btn">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </div>
+    </a>
+
+    <!-- ==========================================================================
+         MOTOR JS DE ULTRA-VELOCIDAD: WASM + WEB WORKER + IDLE CALLBACK + INTERSECTION OBSERVER
+         ========================================================================== -->
+    <script>
+        // 1. MÓDULO WEBASSEMBLY (WASM) INLINE NATIVO EN MEMORIA
+        // Binario compacto que ejecuta sumas y cálculos de tiempo a nivel de CPU
+        const wasmByteCode = new Uint8Array([
+            0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, // Magic & Version
+            0x01, 0x07, 0x01, 0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f, // Type section
+            0x03, 0x02, 0x01, 0x00, // Function section
+            0x07, 0x07, 0x01, 0x03, 0x61, 0x64, 0x64, 0x00, 0x00, // Export "add"
+            0x0a, 0x09, 0x01, 0x07, 0x00, 0x20, 0x00, 0x20, 0x01, 0x6a, 0x0b // Code: local.get 0, local.get 1, i32.add
+        ]);
+
+        let wasmInstance = null;
+        if (typeof WebAssembly === 'object' && typeof WebAssembly.instantiate === 'function') {
+            WebAssembly.instantiate(wasmByteCode).then(res => {
+                wasmInstance = res.instance.exports;
+            }).catch(() => {});
+        }
+
+        // 2. INLINE WEB WORKER: PRECARGA EN SEGUNDO PLANO MULTINÚCLEO (CERO BLOQUEO DEL SCROLL)
+        const workerBlobScript = `
+            self.onmessage = function(e) {
+                if (e.data && e.data.urls) {
+                    e.data.urls.forEach(function(url) {
+                        fetch(url, { mode: 'no-cors' }).catch(function(){});
+                    });
+                }
+            };
+        `;
+        try {
+            const blob = new Blob([workerBlobScript], { type: 'application/javascript' });
+            const backgroundWorker = new Worker(URL.createObjectURL(blob));
+            
+            // Programar precarga selectiva en tiempo ocioso (requestIdleCallback)
+            const scheduleAssetPreload = window.requestIdleCallback || function(cb) { setTimeout(cb, 400); };
+            scheduleAssetPreload(() => {
+                backgroundWorker.postMessage({
+                    urls: ['aromatizantes.webp', 'sofa.webp', 'deco.webp', 'moda.mp4']
+                });
+            });
+        } catch(e) {}
+
+        // 3. ASYNC IMG DECODE: ELIMINA EL PARPADEO BLANCO AL SCROLLEAR
+        function decodeImagesAsync() {
+            document.querySelectorAll('img').forEach(img => {
+                if ('decode' in img) {
+                    if (img.complete) {
+                        img.decode().catch(() => {});
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.decode().catch(() => {});
+                        }, { once: true });
+                    }
+                }
+            });
+        }
+
+        // 4. SMART VIEWPORT VIDEO: CONTROL PRECISO DE HARDWARE (CERO TIRONES EN CELULAR)
+        const reelVideo = document.querySelector('.smart-reel-video');
+        if (reelVideo && 'IntersectionObserver' in window) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        reelVideo.play().catch(() => {});
+                    } else {
+                        reelVideo.pause();
+                    }
+                });
+            }, { threshold: 0.35 });
+            videoObserver.observe(reelVideo);
+        }
+
+        // 5. DETECTOR EN TIEMPO REAL DEL LOCAL (USHUAIA 196)
+        // Horario real: Lun a Vier: 9:00 a 12:30 | 16:30 a 21:00
+        function updateStoreStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Dom, 6 = Sáb
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            
+            // Si el módulo WASM está disponible, se utiliza para la operación de tiempo
+            const timeInMinutes = wasmInstance ? wasmInstance.add(hours * 60, minutes) : (hours * 60 + minutes);
+
+            const morningOpen = 9 * 60;          // 9:00
+            const morningClose = 12 * 60 + 30;   // 12:30
+            const eveningOpen = 16 * 60 + 30;    // 16:30
+            const eveningClose = 21 * 60;        // 21:00
+
+            const isWeekday = day >= 1 && day <= 5;
+            const isOpenNow = isWeekday && (
+                (timeInMinutes >= morningOpen && timeInMinutes <= morningClose) ||
+                (timeInMinutes >= eveningOpen && timeInMinutes <= eveningClose)
+            );
+
+            const badgeText = document.getElementById('statusText');
+            const dot = document.getElementById('statusDot');
+
+            if (isOpenNow) {
+                dot.style.background = '#25D366';
+                dot.style.boxShadow = '0 0 8px #25D366';
+                badgeText.innerText = 'Local Abierto en Ushuaia 196';
+            } else {
+                dot.style.background = '#D97706';
+                dot.style.boxShadow = '0 0 8px #D97706';
+                badgeText.innerText = 'Local Cerrado · Dejanos tu WhatsApp';
+            }
+        }
+
+        // 6. SELECTOR INTERACTIVO "7 DÍAS / 7 INTENCIONES"
+        const intencionesData = {
+            abundancia: {
+                title: "Momento de Abundancia",
+                phrase: '"Atraigo prosperidad, plenitud y gratitud a cada rincón de mi espacio."',
+                link: "https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quiero%20el%20kit%20de%20sahumado%20para%20la%20intenci%C3%B3n%20de%20Abundancia."
+            },
+            paz: {
+                title: "Momento de Paz & Armonía",
+                phrase: '"Despejo la mente, suelto tensiones y restauro la calma en mi hogar."',
+                link: "https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quiero%20el%20kit%20de%20sahumado%20para%20la%20intenci%C3%B3n%20de%20Paz%20y%20Armon%C3%ADa."
+            },
+            meditacion: {
+                title: "Momento de Meditación",
+                phrase: '"Conecto con el presente, el silencio y mi centro espiritual."',
+                link: "https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quiero%20el%20kit%20de%20sahumado%20para%20la%20intenci%C3%B3n%20de%20Meditaci%C3%B3n."
+            },
+            soltar: {
+                title: "Momento de Soltar",
+                phrase: '"Libero cargas pasadas, renuevo el aire y abro paso a lo nuevo."',
+                link: "https://wa.me/5493757525802?text=%C2%A1Hola%20MeraKi!%20%E2%9C%A8%20Quiero%20el%20kit%20de%20sahumado%20para%20la%20intenci%C3%B3n%20de%20Soltar."
+            }
+        };
+
+        function selectIntencion(key, btn) {
+            playHaptic();
+            document.querySelectorAll('.intencion-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const item = intencionesData[key];
+            if (item) {
+                document.getElementById('intencionTitle').innerText = item.title;
+                document.getElementById('intencionPhrase').innerText = item.phrase;
+                document.getElementById('intencionLink').href = item.link;
+            }
+        }
+
+        // 7. RESPUESTA HÁPTICA MÓVIL
+        function playHaptic() {
+            if ('vibrate' in navigator) {
+                try { navigator.vibrate(8); } catch(e) {}
+            }
+        }
+
+        // INICIALIZACIÓN ÓPTIMA
+        window.addEventListener('DOMContentLoaded', () => {
+            updateStoreStatus();
+            decodeImagesAsync();
+        });
+    </script>
+</body>
+</html>
