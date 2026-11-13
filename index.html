@@ -838,7 +838,7 @@
 
         .product-thumb-container {
             width: 100%;
-            height: clamp(120px, 34vw, 160px);
+            aspect-ratio: 4 / 5;
             border-radius: 12px;
             overflow: hidden;
             background: #EFE8DB;
@@ -851,6 +851,10 @@
             object-fit: cover;
             display: block;
             transition: transform 0.4s ease;
+        }
+
+        .product-thumb-container img.img-focus-top {
+            object-position: top center;
         }
 
         .product-meraki-card:hover .product-thumb-container img {
@@ -1358,7 +1362,7 @@
                 <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20consultar%20por%20la%20Colecci%C3%B3n%20Femenina%20MeraKi." target="_blank" rel="noopener noreferrer" class="product-meraki-card" onclick="playHaptic()">
                     <div class="product-thumb-container">
                         <span class="product-tag-badge">Ellas</span>
-                        <img src="chica1.webp" alt="Colección Femenina MeraKi" loading="lazy" decoding="async">
+                        <img src="chica1.webp" alt="Colección Femenina MeraKi" class="img-focus-top" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info-stack">
                         <h4 class="product-title">Colección Femenina</h4>
@@ -1382,7 +1386,7 @@
                 <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20consultar%20por%20el%20Look%20Casual%20Chic%20MeraKi." target="_blank" rel="noopener noreferrer" class="product-meraki-card" onclick="playHaptic()">
                     <div class="product-thumb-container">
                         <span class="product-tag-badge">Ellas</span>
-                        <img src="chica3.webp" alt="Look Casual Chic MeraKi" loading="lazy" decoding="async">
+                        <img src="chica3.webp" alt="Look Casual Chic MeraKi" class="img-focus-top" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info-stack">
                         <h4 class="product-title">Look Casual Chic</h4>
@@ -1406,7 +1410,7 @@
                 <a href="https://wa.me/5493757525802?text=%C2%A1Hola!%20Quiero%20consultar%20por%20la%20l%C3%ADnea%20Elegante%20%26%20Confort%20MeraKi." target="_blank" rel="noopener noreferrer" class="product-meraki-card" onclick="playHaptic()">
                     <div class="product-thumb-container">
                         <span class="product-tag-badge">Ellas</span>
-                        <img src="chica5.webp" alt="Elegante & Confort MeraKi" loading="lazy" decoding="async">
+                        <img src="chica5.webp" alt="Elegante & Confort MeraKi" class="img-focus-top" loading="lazy" decoding="async">
                     </div>
                     <div class="product-info-stack">
                         <h4 class="product-title">Elegante & Confort</h4>
