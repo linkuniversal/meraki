@@ -1627,12 +1627,12 @@
         }
 
         // 6. DETECTOR EN TIEMPO REAL DEL LOCAL (USHUAIA 196)
-        // Horario real: Lun a Vier: 9:00 a 12:30 | 16:30 a 21:00
+        // Horario real: Lun a Vier: 9:00 a 12:30 | 16:30 a 21:00 (Sábados cerrado)
         function updateStoreStatus() {
-            const now = new Date();
-            const day = now.getDay();
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
+            const ba = new Date(Date.now() - 3 * 3600000);
+            const day = ba.getUTCDay();
+            const hours = ba.getUTCHours();
+            const minutes = ba.getUTCMinutes();
             
             const timeInMinutes = wasmInstance ? wasmInstance.add(hours * 60, minutes) : (hours * 60 + minutes);
 
@@ -1643,8 +1643,8 @@
 
             const isWeekday = day >= 1 && day <= 5;
             const isOpenNow = isWeekday && (
-                (timeInMinutes >= morningOpen && timeInMinutes <= morningClose) ||
-                (timeInMinutes >= eveningOpen && timeInMinutes <= eveningClose)
+                (timeInMinutes >= morningOpen && timeInMinutes < morningClose) ||
+                (timeInMinutes >= eveningOpen && timeInMinutes < eveningClose)
             );
 
             const badgeText = document.getElementById('statusText');
@@ -1653,11 +1653,19 @@
             if (isOpenNow) {
                 dot.style.background = '#25D366';
                 dot.style.boxShadow = '0 0 8px #25D366';
-                badgeText.innerText = 'Local Abierto: Ushuaia 196, esq. Jangadero';
+                badgeText.innerText = 'ABIERTO (Lun a Vier 9 a 12:30 | 16:30 a 21 hs)';
             } else {
                 dot.style.background = '#D97706';
                 dot.style.boxShadow = '0 0 8px #D97706';
-                badgeText.innerText = 'Local Cerrado · Dejanos tu WhatsApp';
+                if (isWeekday && timeInMinutes < morningOpen) {
+                    badgeText.innerText = 'ABRIMOS A LAS 9 HS';
+                } else if (isWeekday && timeInMinutes < eveningOpen) {
+                    badgeText.innerText = 'ABRIMOS A LAS 16:30 HS';
+                } else if (day >= 1 && day <= 4) {
+                    badgeText.innerText = 'ABRIMOS MAÑANA 9 HS';
+                } else {
+                    badgeText.innerText = 'ABRIMOS LUNES 9 HS';
+                }
             }
         }
 
@@ -1739,6 +1747,7 @@
             } catch(e) {}
 
             updateStoreStatus();
+            setInterval(updateStoreStatus, 30000);
             decodeImagesAsync();
         });
     </script>
